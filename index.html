@@ -1,0 +1,1821 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Stefan Hochguertel">
+<meta name="dcterms.date" content="2025-01-28">
+
+<title>Public Economics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="index_files/libs/clipboard/clipboard.min.js"></script>
+<script src="index_files/libs/quarto-html/quarto.js"></script>
+<script src="index_files/libs/quarto-html/popper.min.js"></script>
+<script src="index_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="index_files/libs/quarto-html/anchor.min.js"></script>
+<link href="index_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="index_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="index_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="index_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="index_files/libs/bootstrap/bootstrap-8a79a254b8e706d3c925cde0a310d4f0.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<style>
+
+      .quarto-title-block .quarto-title-banner h1,
+      .quarto-title-block .quarto-title-banner h2,
+      .quarto-title-block .quarto-title-banner h3,
+      .quarto-title-block .quarto-title-banner h4,
+      .quarto-title-block .quarto-title-banner h5,
+      .quarto-title-block .quarto-title-banner h6
+      {
+        color: white;
+      }
+
+      .quarto-title-block .quarto-title-banner {
+        color: white;
+      }
+</style>
+<script>
+
+MathJax = {
+
+  loader: {load: ['[tex]/tagformat']},
+
+  section: 1,
+
+  tex: {
+
+    tags: 'ams',
+
+    packages: {'[+]': ['tagformat', 'sections']},
+
+    tagformat: {
+
+      number: (n) => MathJax.config.section + '.' + n
+
+    }
+
+  },
+
+  startup: {
+
+    ready() {
+
+      const Configuration = MathJax._.input.tex.Configuration.Configuration;
+
+      const CommandMap = MathJax._.input.tex.SymbolMap.CommandMap;
+
+      new CommandMap('sections', {
+
+        nextSection: 'NextSection'
+
+      }, {
+
+        NextSection(parser, name) {
+
+          MathJax.config.section++;
+
+          parser.tags.counter = parser.tags.allCounter = 0;
+
+        }
+
+      });
+
+      Configuration.create(
+
+        'sections', {handler: {macro: ['sections']}}
+
+      );
+
+      MathJax.startup.defaultReady();
+
+   }
+
+  }
+
+};
+
+</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body>
+
+<header id="title-block-header" class="quarto-title-block default toc-left page-columns page-full">
+  <div class="quarto-title-banner page-columns page-full">
+    <div class="quarto-title column-page-right">
+      <h1 class="title">Public Economics</h1>
+            <p class="subtitle lead"></p><div class="line-block">Lecture Notes<br>
+<br>
+Bachelor Course • Vrije Universiteit Amsterdam</div><p></p>
+                      </div>
+  </div>
+    
+  
+  <div class="quarto-title-meta column-page-right">
+
+      <div>
+      <div class="quarto-title-meta-heading">Author</div>
+      <div class="quarto-title-meta-contents">
+               <p>Stefan Hochguertel </p>
+            </div>
+    </div>
+      
+      <div>
+      <div class="quarto-title-meta-heading">Published</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date">January 28, 2025</p>
+      </div>
+    </div>
+    
+      <div>
+      <div class="quarto-title-meta-heading">Modified</div>
+      <div class="quarto-title-meta-contents">
+        <p class="date-modified">January 29, 2025</p>
+      </div>
+    </div>
+      
+    </div>
+    
+  
+  </header><div id="quarto-content" class="page-columns page-rows-contents page-layout-full toc-left">
+<div id="quarto-sidebar-toc-left" class="sidebar toc-left">
+  <nav id="TOC" role="doc-toc" class="toc-active" data-toc-expanded="1">
+    <h2 id="toc-title">Contents</h2>
+   
+  <ul>
+  <li><a href="#sec-about" id="toc-sec-about" class="nav-link active" data-scroll-target="#sec-about">About</a>
+  <ul class="collapse">
+  <li><a href="#sec-preface" id="toc-sec-preface" class="nav-link" data-scroll-target="#sec-preface">Preface</a></li>
+  <li><a href="#sec-ack" id="toc-sec-ack" class="nav-link" data-scroll-target="#sec-ack">Disclaimer and Acknowledgement</a></li>
+  </ul></li>
+  <li><a href="#sec-intro" id="toc-sec-intro" class="nav-link" data-scroll-target="#sec-intro"><span class="header-section-number">1</span> Introduction and Overview</a>
+  <ul class="collapse">
+  <li><a href="#prerequisite" id="toc-prerequisite" class="nav-link" data-scroll-target="#prerequisite"><span class="header-section-number">1.1</span> Prerequisite</a></li>
+  <li><a href="#content-of-these-notes" id="toc-content-of-these-notes" class="nav-link" data-scroll-target="#content-of-these-notes"><span class="header-section-number">1.2</span> Content of these Notes</a></li>
+  <li><a href="#sec-overview" id="toc-sec-overview" class="nav-link" data-scroll-target="#sec-overview"><span class="header-section-number">1.3</span> Embedding the Microeconomic Model: An Overview</a></li>
+  </ul></li>
+  <li><a href="#sec-conswelfare" id="toc-sec-conswelfare" class="nav-link" data-scroll-target="#sec-conswelfare"><span class="header-section-number">2</span> Measuring Consumer Welfare</a>
+  <ul class="collapse">
+  <li><a href="#sec-constrained" id="toc-sec-constrained" class="nav-link" data-scroll-target="#sec-constrained"><span class="header-section-number">2.1</span> Demand Function from Constrained Maximization</a></li>
+  <li><a href="#sec-compstatics" id="toc-sec-compstatics" class="nav-link" data-scroll-target="#sec-compstatics"><span class="header-section-number">2.2</span> Comparative Statics</a></li>
+  <li><a href="#sec-engel" id="toc-sec-engel" class="nav-link" data-scroll-target="#sec-engel"><span class="header-section-number">2.3</span> Income Shifts and Engel Curves</a></li>
+  <li><a href="#sec-incomeel" id="toc-sec-incomeel" class="nav-link" data-scroll-target="#sec-incomeel"><span class="header-section-number">2.4</span> Income Elasticities and Nomenclature</a></li>
+  <li><a href="#sec-effects" id="toc-sec-effects" class="nav-link" data-scroll-target="#sec-effects"><span class="header-section-number">2.5</span> Income and Substitution Effects of Price Changes</a></li>
+  <li><a href="#sec-utilchanges" id="toc-sec-utilchanges" class="nav-link" data-scroll-target="#sec-utilchanges"><span class="header-section-number">2.6</span> Utility Changes</a></li>
+  <li><a href="#sec-incomesupport" id="toc-sec-incomesupport" class="nav-link" data-scroll-target="#sec-incomesupport"><span class="header-section-number">2.7</span> Cash Transfers and Income Support</a></li>
+  <li><a href="#sec-compensating" id="toc-sec-compensating" class="nav-link" data-scroll-target="#sec-compensating"><span class="header-section-number">2.8</span> Compensating Variation and Compensated Demand</a></li>
+  </ul></li>
+  <li><a href="#sec-efficiency" id="toc-sec-efficiency" class="nav-link" data-scroll-target="#sec-efficiency"><span class="header-section-number">3</span> Efficiency</a>
+  <ul class="collapse">
+  <li><a href="#sec-edgeworth" id="toc-sec-edgeworth" class="nav-link" data-scroll-target="#sec-edgeworth"><span class="header-section-number">3.1</span> <span class="smallcaps">Edgeworth</span> Box</a></li>
+  <li><a href="#sec-pareto" id="toc-sec-pareto" class="nav-link" data-scroll-target="#sec-pareto"><span class="header-section-number">3.2</span> <span class="smallcaps">Pareto</span> Efficiency</a></li>
+  <li><a href="#sec-contract" id="toc-sec-contract" class="nav-link" data-scroll-target="#sec-contract"><span class="header-section-number">3.3</span> Contract Curve</a></li>
+  <li><a href="#sec-paretian" id="toc-sec-paretian" class="nav-link" data-scroll-target="#sec-paretian"><span class="header-section-number">3.4</span> Paretian Welfare Criterion</a></li>
+  <li><a href="#sec-allocative" id="toc-sec-allocative" class="nav-link" data-scroll-target="#sec-allocative"><span class="header-section-number">3.5</span> Allocative Efficiency</a></li>
+  <li><a href="#sec-socialpl" id="toc-sec-socialpl" class="nav-link" data-scroll-target="#sec-socialpl"><span class="header-section-number">3.6</span> Social Planner</a></li>
+  </ul></li>
+  <li><a href="#sec-equitywelfare" id="toc-sec-equitywelfare" class="nav-link" data-scroll-target="#sec-equitywelfare"><span class="header-section-number">4</span> Equity and Social Welfare</a>
+  <ul class="collapse">
+  <li><a href="#sec-upf" id="toc-sec-upf" class="nav-link" data-scroll-target="#sec-upf"><span class="header-section-number">4.1</span> Utility Possibilities Frontier</a></li>
+  <li><a href="#sec-equity" id="toc-sec-equity" class="nav-link" data-scroll-target="#sec-equity"><span class="header-section-number">4.2</span> Equity</a></li>
+  <li><a href="#sec-swf" id="toc-sec-swf" class="nav-link" data-scroll-target="#sec-swf"><span class="header-section-number">4.3</span> Social Welfare Function</a></li>
+  </ul></li>
+  <li><a href="#sec-markets" id="toc-sec-markets" class="nav-link" data-scroll-target="#sec-markets"><span class="header-section-number">5</span> Markets, Welfare Theorems, and The Second Best</a>
+  <ul class="collapse">
+  <li><a href="#sec-prices" id="toc-sec-prices" class="nav-link" data-scroll-target="#sec-prices"><span class="header-section-number">5.1</span> Prices</a></li>
+  <li><a href="#sec-firstth" id="toc-sec-firstth" class="nav-link" data-scroll-target="#sec-firstth"><span class="header-section-number">5.2</span> The First Fundamental Theorem of Welfare Economics</a></li>
+  <li><a href="#sec-secth" id="toc-sec-secth" class="nav-link" data-scroll-target="#sec-secth"><span class="header-section-number">5.3</span> The Second Fundamental Theorem of Welfare Economics</a></li>
+  <li><a href="#sec-secbest" id="toc-sec-secbest" class="nav-link" data-scroll-target="#sec-secbest"><span class="header-section-number">5.4</span> Second Best</a></li>
+  </ul></li>
+  </ul>
+</nav>
+</div>
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+</div>
+<main class="content quarto-banner-title-block column-page-right" id="quarto-document-content">
+
+
+
+
+
+<style>
+.flushright {
+   text-align: right;
+}
+</style>
+<!-- SECTION ********************************************************** -->
+<section id="sec-about" class="level1 unnumbered">
+<h1 class="unnumbered">About</h1>
+<!-- SECTION ********************************************************** -->
+<section id="sec-preface" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-preface">Preface</h2>
+<p>These are lecture notes for the introductory part of the course “Public Economics” at Vrije Universiteit Amsterdam. They are meant to complement our main text book, and provide an alternative reading. They focus on modeling aspects, cutting short on contextual stories.</p>
+<p>What we offer in these notes is partly new and experimental, in particular when it comes to graphical exposition. Our graphs make use of the graphing calculator available at <a href="https://desmos.com">desmos.com</a>.</p>
+<p>Graphs or diagrams are visualizations of models. Consider a policy maker that wants to know how changing the excise tax rate on gasoline can change consumers’ choice of transport mode. Currently the excise tax is 80 cents, and it can be measured how much people drive in their cars and use their bicycles. A model can help making an informed prediction for scenarios that have not yet materialized, for instance an increase of the tax to 100 cents. The model may have a number of mathematical equations that depend on parameter values. In economics, model solutions are often (but not always) equilibria. Equilibria help making predictions about economic outcomes. Graphs show in many cases an exact model solution given concrete parameter values, such as the tax rate. Policy makers can then be conceived of being interested in and able to change those parameter values with the aim of influencing economic outcomes. Unlike the usual textbook readings where economic diagrams representing generic modeling aspects are shown as static examples, our graphs are based on parameterized models and based on particular mathematical specifications. Changing the parameter values gives you a direct quantitative idea on how the outcome of interest is predicted to change.</p>
+<p>In the words of economists Mark <span class="smallcaps">Blaug</span> and Peter <span class="smallcaps">Lloyd</span>,</p>
+<blockquote class="blockquote">
+<p><q>In many areas of economic theory, the way in which economists understand economic concepts and propositions is through figures and diagrams. What teacher of economic theory has not seen the dawn of understanding come over students when, failing to understand an exposition of some complex model in algebra or calculus, they are presented with a simple illustration?</q></p>
+</blockquote>
+<blockquote class="blockquote">
+<p><q>One can comprehend relationships among a number of variables […] or the effects of shifting curves or multiple equilibria more readily than in the corresponding algebra. This advantage has been increased by modern technologies […] and the delivery of diagrams in classroom from computer-based programs allow overlays and other graphical techniques that aid the exposition of complex ideas.</q></p>
+</blockquote>
+<div class="flushright">
+<p>Mark <span class="smallcaps">Blaug</span> and Peter <span class="smallcaps">Lloyd</span>, <em>Famous Figures and Diagrams in Economics.</em><br> Cheltenham, UK: Edward Elgar Publishing. 2010.</p>
+</div>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-ack" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="sec-ack">Disclaimer and Acknowledgement</h2>
+<p>Special thanks go to teaching and student assistants that have helped developing Desmos applications, and design of the present document. In particular Yingjie <span class="smallcaps">Huang</span>, Julia <span class="smallcaps">Markusiewicz</span>, and Francesca <span class="smallcaps">Schoenmaker</span>.</p>
+<p>All errors are mine, however: the present document contains almost surely mistakes, typos, omissions, jumps in logic, and other inconveniences. Please notify me of problems.</p>
+<p>The document is certainly not optimized for all kinds of user experiences, and only provided as-is. It is best viewed on a laptop or tablet, not on a smartphone.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Technical Remark">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Technical Remark
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The present document was rendered using <a href="https://quarto.org">Quarto</a>. The <code>html</code> output was chosen to allow easy embedding of Desmos graphs and a host of other features that this format allows for online reading, among which suitable layout with table of contents navigation. Readers can also use automatic translation services available in their browser to read the document in some other language. Printing (including to .pdf) may however prove cumbersome.</p>
+</div>
+</div>
+</div>
+<div class="flushright">
+<p>Amsterdam, January 28, 2025<br> Stefan <span class="smallcaps">Hochguertel</span></p>
+</div>
+<!-- SECTION ********************************************************** -->
+</section>
+</section>
+<section id="sec-intro" class="level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Introduction and Overview</h1>
+<!-- SECTION ********************************************************** -->
+<!-- SubSection........................................................ -->
+<section id="prerequisite" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="prerequisite"><span class="header-section-number">1.1</span> Prerequisite</h2>
+<p>We shall be assuming that readers have a background in introductory microeconomics, in particular are familiar with the following topics:</p>
+<ol type="1">
+<li>consumer choice and demand
+<ul>
+<li>indifference curves and utility function</li>
+<li>utility maximization under a budget constraint</li>
+<li>derivation of a demand function (depending on prices and income)</li>
+<li><span class="smallcaps">Engel</span> curve</li>
+<li>price and income elasticities</li>
+<li>consumer choice with endowment:
+<ul>
+<li>labor supply (time endowment)</li>
+<li>intertemporal consumption choice (life cycle income endowment)</li>
+</ul></li>
+<li>measuring consumer welfare
+<ul>
+<li>change in consumer surplus</li>
+<li>compensating variation</li>
+</ul></li>
+</ul></li>
+<li>firm’s technology, cost and supply
+<ul>
+<li>production function</li>
+<li>production possibilities frontier</li>
+<li>cost of output function for 1-input-1-output technologies</li>
+<li>cost concepts (marginal, average, fixed, total cost)</li>
+<li>profit maximization of the competitive firm</li>
+<li>supply of output function</li>
+</ul></li>
+<li>aggregation, equilibrium and surplus
+<ul>
+<li>aggregation of individual demands to market demand</li>
+<li>aggregation of individual supply to market supply</li>
+<li>equilibrium and price determination in a competitive, atomistic environment</li>
+<li>consumer and producer surplus</li>
+<li>deadweight loss under distortions to the competitive setting</li>
+</ul></li>
+<li>noncooperative game theory
+<ul>
+<li>normal form games (payoff matrix or table)</li>
+<li>notion of complete information</li>
+<li>dominant strategies</li>
+<li>notion of equilibrium</li>
+<li><span class="smallcaps">Nash</span> strategies and <span class="smallcaps">Nash</span> equilibrium</li>
+</ul></li>
+<li>market structure
+<ul>
+<li>standard monopoly</li>
+<li>duopoly under quantity choice (<span class="smallcaps">Cournot</span>-<span class="smallcaps">Nash</span> equilibrium)</li>
+</ul></li>
+</ol>
+</section>
+<section id="content-of-these-notes" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="content-of-these-notes"><span class="header-section-number">1.2</span> Content of these Notes</h2>
+<p>The above defines our point of departure.</p>
+<p><a href="#sec-conswelfare" class="quarto-xref">Chapter&nbsp;2</a> reviews how a budget constraint restricts the optimal choices a rational consumer can make when maximizing their utility. Prices and income therefore, along with preference parameters, determine a consumer’s demand function. Viewed as a function of income, we have an <span class="smallcaps">Engel</span> curve. We can learn from it how the demand reacts to changes in income and measure income elasticities. Variation in prices and/or incomes brings about variation in the budget constraint, and, by implication, variation in the optimally demanded quantities. At the same time, as the composition of the chosen consumption basket changes, the satisfaction level that the consumer experiences (or, optimally can experience) may change. Such variation in satisfaction level offers a first gauge at what we may call change in consumer welfare. We may actually prefer to measure welfare changes expressed in monetary (or money or dollar) terms, using the analytical framework of rational consumer choice. Once we know, for instance, how large a drop in welfare a consumer experiences, if all of a sudden the price for heating gas explodes, our framework opens a route for analyzing what type of compensatory payments a policymaker could suggest to help consumers that feel squeezed.</p>
+<p>There are a couple of more things that can be done, after having analyzed a single consumer. We can consider more than one consumer. Start with two, helping us model an embryonic society. We consider the preferences of two consumers, if they face the problem how to allocate a given amount of quantities of all goods (10 apples, 6 bananas) between them. That is, each consumer is to have his or her own consumption basket, but the total quantities summed over both baskets is fixed. How to allocate the goods optimally? This is analyzed in the <a href="#sec-efficiency" class="quarto-xref">Chapter&nbsp;3</a> that introduces the graphical concept of an <span class="smallcaps">Edgeworth</span> box. We state that consumers can find, by direct interaction and haggling, a <span class="smallcaps">Pareto</span> efficient outcome that they cannot improve upon. Next to this type of exchange efficiency, there is allocative efficiency, that brings together the production with the consumption sphere.</p>
+<p><span class="smallcaps">Pareto</span> Efficiency does not need market interaction, so it does not rely on a price system. Restricting social decisions in such a way that only <span class="smallcaps">Pareto</span> improvements were considered, is very conservative in the sense that consumers are allowed to veto all changes that hurt them. That would leave limited scope for redistribution, even though the approach respects consumer sovereignty. How about, we take an apple from one consumer and give it to the other, without compensation? Sounds like socialism, but may be the right thing to do, if we live in a society that judges such policies fair under certain circumstances. In fact, this happens all the time with the income tax (that tends to tax the rich progressively, and where the poor typically don’t pay taxes but are at the receiving end of the redistribution chain). Doing so is a big intellectual leap from the framework discussed before, and we try to make clear why. We end up with an optimal (at least in some sense optimal) social choice that maximizes social welfare. This is <a href="#sec-equitywelfare" class="quarto-xref">Chapter&nbsp;4</a>.</p>
+<p>Lastly, we reflect back on the implications of a market system for <span class="smallcaps">Pareto</span> efficient allocation and for social welfare optimality in <a href="#sec-markets" class="quarto-xref">Chapter&nbsp;5</a>. These are The Fundamental Theorems of Welfare Economics and The Second Best. Whereas the Fundamental Theorems allow the optimistic prediction that markets can efficiently allocate scarce resources in a way that also the government cannot improve upon, and that can implement any government-selected target allocation, the Second Best allows for a slightly more practical approach and realistic view.</p>
+</section>
+<section id="sec-overview" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="sec-overview"><span class="header-section-number">1.3</span> Embedding the Microeconomic Model: An Overview</h2>
+<p>Much of what we assume known or what we have described so far is summarized again in the diagram we present in <a href="#sec-overview" class="quarto-xref">Section&nbsp;1.3</a>. The model sketched is much of a work horse model for theoretical underpinnings of economic policy making, and it can be generalized to many consumers, firms, goods, inputs, it can be generalized to take intertemporal decisions into account and risk or uncertainty. Yet, a couple of big issues are not covered, and they have much to do with market failure: deviations of real-world markets in terms of efficiency, or equity, that everyone is aware of, and that critics of the market mechanism will always point out. We shall therefore have a look at issues of market failure, missing markets or incomplete property rights, but also asymmetric information, in particular when it comes to insuring and taxing. We shall spend quite some time on taxes, both corrective but also redistributional, and discuss their intended and unintended effects, but also the limitations of the state to tax when individuals and firms evade or avoid taxes. See the description in the course manual for details on parts that are not covered in these notes.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="CIWstages">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true" href="">Efficiency, and Inequality</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false" href="">Social Welfare, and 2nd Theorem</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false" href="">Market Failure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false" href="">Policy</a></li></ul>
+<div class="tab-content" data-group="CIWstages">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p><img src="images/CIW_overview_1.png" class="img-fluid"></p>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<p><img src="images/CIW_overview_2.png" class="img-fluid"></p>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<p><img src="images/CIW_overview_3.png" class="img-fluid"></p>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<p><img src="images/CIW_overview_4.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+<div class="tabset-margin-container"></div><div class="panel-tabset" data-group="CIWstages">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true" href="">Efficiency, and Inequality</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false" href="">Social Welfare, and 2nd Theorem</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false" href="">Market Failure</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-4" role="tab" aria-controls="tabset-2-4" aria-selected="false" href="">Policy</a></li></ul>
+<div class="tab-content" data-group="CIWstages">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="How Markets Work and What they Imply">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+How Markets Work and What they Imply
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Rational individual agents <strong>maximize</strong> their own utility (consumers: at given prices and incomes) or their profits (firms: given their production technology).</p>
+<p>Aggregating demand and supply relations to market level helps determining <strong>equilibrium</strong> prices and quantities.</p>
+<p>Welfare measured from concepts such as producer surplus or consumer surplus (or, compensating variation) is maximized under ideal circumstances (among which: competitive firm behavior) and <strong>Pareto Efficiency</strong> obtains (<strong>1st Theorem of Welfare Economics</strong>). Inequality and poverty may occur.</p>
+</div>
+</div>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="From Individual-based Welfare to Social Welfare">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+From Individual-based Welfare to Social Welfare
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Along with Pareto Efficiency, <strong>inequality and poverty</strong> co-determine the wider concept of <strong>Social Welfare</strong>. Social welfare is evaluated at the societal level, and the relative positions of individuals may be taken into account. In practice, this may occur by means of democratic elections that aggregate individual preferences to those of society.</p>
+<p>Under ideal circumstances, Pareto Efficiency and equity (in-/equality) considerations can go hand-in-hand (<strong>2nd Theorem of Welfare Economics</strong>).</p>
+</div>
+</div>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Markets May Not Deliver Optimal Results">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Markets May Not Deliver Optimal Results
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Many markets do not appear to establish the close link between equilibrium outcomes and Pareto Efficiency, and hence fail to do what they should. Common reasons include</p>
+<ul>
+<li>presence of externalities on others</li>
+<li>underprovided public goods</li>
+<li>asymmetric information between parties</li>
+<li>abuse of market power</li>
+</ul>
+<p>They entail violations of assumptions leading up to the 1st Theorem.</p>
+<p>This failure also breaks the non-separability of equity and efficiency (2nd Theorem). Market outcomes are not <strong>First Best</strong> anymore, instead, there is a trade-off: society needs to choose among evils, and can reach at most <strong>Second Best</strong> outcomes.</p>
+</div>
+</div>
+</div>
+<div id="tabset-2-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-4-tab">
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="Policy Acts on Inequality and Market Failure to Improve Social Welfare">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Policy Acts on Inequality and Market Failure to Improve Social Welfare
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Even in a First Best world, inequality and poverty are among the reasons for policy to intervene in market allocation, using public policy.</p>
+<p>If policy <strong>redistributes</strong> incomes or resources between consumers, it will need to rely on <strong>distortionary</strong> taxation and regulation. These distortions move the economy away from the First Best, however.</p>
+<p>Conversely, if market failure is present, policy can aim to restore efficiency.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- SECTION ********************************************************** -->
+</section>
+</section>
+<section id="sec-conswelfare" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Measuring Consumer Welfare</h1>
+<div style="display:none">
+<span class="math inline">\(\nextSection\)</span>
+</div>
+<!-- SECTION ********************************************************** -->
+<!-- SubSection........................................................ -->
+<section id="sec-constrained" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="sec-constrained"><span class="header-section-number">2.1</span> Demand Function from Constrained Maximization</h2>
+<p>Utility maximization directly results in consumption demand. Maximized utility yields optimal quantities demanded, when prices <span class="math inline">\(p_x, p_y\)</span> and income <span class="math inline">\(m\)</span> are given. So, mathematically, we write <span class="math display">\[\begin{equation}
+\label{eq:umaxproblem}
+\max_{x,y}\;u(x,y) \quad \text{s.t.} \quad p_x\cdot x+p_y\cdot y = m
+\end{equation}\]</span> which reads: maximize utility by choosing <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> such that expenditure <span class="math inline">\(p_x\cdot x+p_y\cdot y\)</span> equals income <span class="math inline">\(m\)</span>. The latter (s.t.) is a constraint. In economic terms we call this a <em>budget constraint</em>, stipulating that consumers cannot spend more than the income they have. They could however spend less. This will not make much sense in our model since there is no future and hence no need for saving for tomorrow. On top of that, under the ‘more is better’ assumption, fully exhausting the given budget is a necessary condition for achieving a level of utility that is as high as possible (for if there was a dollar left to spend, it better be spent on commodity units that increase utility).</p>
+<p>If we solve the mathematical problem <span class="math inline">\(\eqref{eq:umaxproblem}\)</span>, we get demand functions <span class="math inline">\(D_x\)</span> and <span class="math inline">\(D_y\)</span> that relate the quantities demanded of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> to the underlying parameters: <span class="math display">\[\begin{equation}
+\label{eq:demx}
+x = D_x(p_x, p_y, m)
+\end{equation}\]</span> and <span class="math display">\[y = D_y(p_x, p_y, m).\]</span> These are optimally chosen quantities demanded by a rational, utility-maximizing consumer, when prices and income are given.</p>
+<div id="cau-opt" class="callout callout-style-default callout-caution no-icon callout-titled" title="Constrained Maximization of Square Root Utility">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example&nbsp;2.1: Constrained Maximization of Square Root Utility
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>There are many ways to solve this problem in practice. One convenient way is to start from a specification of the utility function, say, a simple <span class="smallcaps">Cobb Douglas</span> type, <span class="math display">\[{u(x,y) = \sqrt{x \cdot y}}\]</span> write down the budget constraint <span class="math display">\[\begin{equation}
+\label{eq:bc}
+p_x\cdot x+p_y\cdot y = m,
+\end{equation}\]</span> solve the latter for quantity <span class="math inline">\(y\)</span>, <span class="math display">\[y = \frac{m-p_x\cdot x}{p_y},\]</span> and plug this expression into <span class="math inline">\(u(x,y)\)</span> to find a (new) function with only quantity <span class="math inline">\(x\)</span> as its argument, <span class="math display">\[\begin{equation}
+\label{eq:usqrt1}
+u(x) = \sqrt{x \cdot \frac{m-p_x\cdot x}{p_y}}.
+\end{equation}\]</span> This way, we have incorporated the budget constraint and got rid of variable <span class="math inline">\(y\)</span>.</p>
+</div>
+</div>
+</div>
+<p>A more general way to solve the optimization problem is to use the Lagrange approach. First, we need to set up the Lagrange function with <span class="math inline">\(\lambda\)</span> as multiplier <span class="math display">\[ {\cal L}(x,y,\lambda) = u(x,y) - \lambda \cdot (p_x \cdot x + p_y \cdot y-m) \]</span> then, set the first derivatives with respect to <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> and <span class="math inline">\(\lambda\)</span> equal to zero (these are the so-called first order conditions, FOCs) <span class="math display">\[\begin{eqnarray*}
+\frac{\partial {\cal L} }{\partial x}       =\;\; \frac{\partial u(x,y)}{\partial x} - \lambda \cdot p_x &amp;=&amp; 0 \\
+\frac{\partial {\cal L} }{\partial y}       =\;\; \frac{\partial u(x,y)}{\partial y} - \lambda \cdot p_y &amp;=&amp; 0 \\
+\frac{\partial {\cal L} }{\partial \lambda} = m- p_x \cdot x - p_y \cdot y &amp;=&amp; 0
+\end{eqnarray*}\]</span> then, rewrite the first couple of equations (bring the terms with <span class="math inline">\(\lambda\)</span> to the right side of the equation) and divide one equation by the other so that <span class="math inline">\(\lambda\)</span> will cancel. We get <span class="math display">\[\left.  \begin{array}{ccc}
+\frac{\partial u(x,y)}{\partial x} &amp;=&amp; \lambda \cdot p_x \\
+\frac{\partial u(x,y)}{\partial y} &amp;=&amp; \lambda \cdot p_y \end{array} \right\} \to \frac{\frac{\partial u(x,y)}{\partial x}}{\frac{\partial u(x,y)}{\partial y}} = \frac{p_x}{p_y}
+\]</span> The first part of the last equation is the well-known marginal rate of substitution, the (negative) of the slope of the indifference curve (level curve of the utility function). In the optimum, it must equal the relative price, the (negative) of the slope of the budget constraint. In other words, this central equation requires for (quasi-concave and) differentiable utilities and budget constraints that the slopes are equal. This is the <em>marginal condition</em>. There is a third first order condition (derivative with respect to <span class="math inline">\(\lambda\)</span>) that essentially replicates the budget constraint. This is the <em>level condition</em>: the optimal choice must be on the budget constraint, not above (infeasible) and not below (leaving money on the table).</p>
+<p>This resulting system of two equations in two unknowns can then be solved to find two separate equations for <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. These are the demand equations for both goods.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-compstatics" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="sec-compstatics"><span class="header-section-number">2.2</span> Comparative Statics</h2>
+<p>Demand for a particular good is a function of all prices and income (and sometimes of endowments). This helps us predict how a rational consumer’s demand will change once we alter any of the parameters. Some of the parameters shift through changing market conditions, like certain goods getting more expensive, and some parameters shift through economic policy (income tax, or taxes on specific goods, for example). Analyzing such changes in our <em>static</em> model is called <em>comparative statics</em>, since it compares outcomes in static equilibria. We now change income and prices.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-engel" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="sec-engel"><span class="header-section-number">2.3</span> Income Shifts and Engel Curves</h2>
+<p>Changing incomes is most straightforward when analyzing the effect on demand. We obtain so-called <span class="smallcaps">Engel</span> curves that give us a relation between consumption demand and income. Importantly, the relation is the same as our optimized function we looked at earlier, <span class="math display">\[x = D_x(p_x, p_y, m)\]</span> but now we keep <span class="math inline">\(p_x\)</span> and <span class="math inline">\(p_y\)</span> fixed and only vary <span class="math inline">\(m\)</span>. So, we might as well write: <span class="math display">\[x = D(m).\]</span> In many cases, higher incomes are associated with higher consumption. So, we can do the comparative statics by changing the value of <span class="math inline">\(m\)</span> and draw the <span class="smallcaps">Engel</span> curve in a diagram that collects the optimal <span class="math inline">\(x,m\)</span> combinations (with quantity and income on the axes).</p>
+<p>Using <span class="smallcaps">Engel</span> curves can be insightful if consumption of specific expenditure categories is considered. For instance, it will be interesting for policy to be informed about the relation between income and food consumption. Calculating the budget share spent on food and plotting it against income may give rise to <span class="smallcaps">Engel</span>’s Law, an empirical regularity showing that the food share decreases with income. That means, whereas households with low incomes may spend absolutely less on food than households with middle or high income, the low income earners spend more relatively. This is because food consumption is one of the first needs that households have to address, purely to meet nutritional requirements.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-incomeel" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="sec-incomeel"><span class="header-section-number">2.4</span> Income Elasticities and Nomenclature</h2>
+<!-- Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<div class="grid">
+<div class="g-col-6">
+<p>Characterizing <span class="smallcaps">Engel</span> curves in terms of their generic properties (increasing, decreasing, etc.) can be done locally using the concept of <em>elasticity</em>. This elasticity is a statistic (or number) that tells us by how many percent demand changes when we increase income by 1 percent. We can define it by considering discrete or continuous changes (favoring calculus, we prefer the continuous case):[^elasticity]</p>
+<p><span class="math display">\[\eta^D_m (x) = \frac{\mathrm{d} D(m)}{\mathrm{d} m} \cdot \frac{m}{x}  \approx \left. \frac{\Delta D(m)}{\Delta m} \right/ \frac{x}{m}.\]</span></p>
+<p>The letter <span class="math inline">\(\eta\)</span>[^greek] is used as symbol for elasticity, the superscript <span class="math inline">\(D\)</span> refers to demand, and the subscript <span class="math inline">\(m\)</span> to income.</p>
+<p>Depending on the sign and size of <span class="math inline">\(\eta^D_m\)</span>, it is customary to attach certain adjectives to the good in question to characterize them, see <a href="#tbl-incomeel" class="quarto-xref">Table&nbsp;2.1</a>.</p>
+</div>
+<div class="g-col-6">
+<div id="tbl-incomeel" class="center-table quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-incomeel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2.1: Goods Types by Income Elasticity of Demand
+</figcaption>
+<div aria-describedby="tbl-incomeel-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="center-table caption-top table">
+<thead>
+<tr class="header">
+<th>Characterization</th>
+<th>Example</th>
+<th><span class="math inline">\(\eta^D_m\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>inferior good</td>
+<td>fast fashion</td>
+<td><span class="math inline">\(&lt;0\)</span></td>
+</tr>
+<tr class="even">
+<td>normal good</td>
+<td>clothing</td>
+<td><span class="math inline">\(\ge 0\)</span></td>
+</tr>
+<tr class="odd">
+<td>necessary good</td>
+<td>socks</td>
+<td><span class="math inline">\(0-1\)</span></td>
+</tr>
+<tr class="even">
+<td>luxury good</td>
+<td>designer handbag</td>
+<td><span class="math inline">\(&gt;1\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Examples are for illustration only and may not hold in all circumstances.</p>
+</div>
+</div>
+<!-- End Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<div class="callout callout-style-default callout-caution no-icon callout-titled" title="Example: Cobb Douglas">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example: Cobb Douglas
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is very easy to see that in the Cobb Douglas case, the Engel curves are straight lines through the origin. Recall that demand for good <span class="math inline">\(x\)</span> is simply <span class="math display">\[x = \frac{\alpha}{p_x}\cdot m\]</span> to understand that Engel curves have no intercept and a constant slope (for given price <span class="math inline">\(p_x\)</span>). This is because demand is strictly proportional to income. Hence, consumption increases linearly in income <span class="math inline">\(m\)</span>. The income elasticity is constant as well, since when applying our formula, we find <span class="math display">\[\eta^D_m(x) = \frac{\alpha}{p_x} \cdot \frac{m}{\frac{\alpha}{p_x}\cdot m} = 1.\]</span></p>
+<p>With a CES utility, we also would find that demand is strictly proportional to income, and Engel curves are again linear and go through the origin. Hence, the income elastity is 1. This implies that all goods under standard Cobb Douglas or CES preferences are normal, but neither necessities nor luxuries (as defined in <a href="#tbl-incomeel" class="quarto-xref">Table&nbsp;2.1</a>).</p>
+</div>
+</div>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-effects" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="sec-effects"><span class="header-section-number">2.5</span> Income and Substitution Effects of Price Changes</h2>
+<p>Changing prices is a little less straightforward when analyzing the effect on demand. First, there are many prices to consider (at least two in our model). We can change any of them, but let’s focus on changing <span class="math inline">\(p_x\)</span> when analyzing the effect on the quantity demanded <span class="math inline">\(x\)</span>. Second, there are two effects on the demand for <span class="math inline">\(x\)</span> from a change in <span class="math inline">\(p_x\)</span>. Consider a situation when restaurant food gets more expensive. Then (a) consumers have lower purchasing power, real incomes decrease; that’s the income effect discussed before (but now due to a price change); and (b) restaurant food becomes relatively more expensive compared to other goods, so consumers might substitute away and allocate their money differently (for instance, eat more at home); that is the substitution effect. Income and substitution effects may go in the same, or in the opposite direction.</p>
+<p><a href="#fig-incsubeffects" class="quarto-xref">Figure&nbsp;2.1</a> shows a consumer choice diagram and gives an example of income and substitution effects for the quantities of <span class="math inline">\(x\)</span> when the price <span class="math inline">\(p_x\)</span> doubles. The underlying utility function is a <span class="smallcaps">Cobb Douglas</span> specification. The chosen bundle before the price change is point A, after the price change point B, and C is a virtual point that helps clarify how to determine income and substitution effects.</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Virtual Point">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Virtual Point
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A virtual point is a point from a thought experiment. It cannot be observed directly. Point C in <a href="#fig-incsubeffects" class="quarto-xref">Figure&nbsp;2.1</a>, for instance, lies outside whatever the consumer is able to buy with his or her income, before and after the price change.</p>
+</div>
+</div>
+<!-- Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<div class="grid">
+<div class="g-col-6">
+<p>The substitution effect when moving away from A is obtained after applying a virtual (dashed) budget contraint with the new set of prices and being tangential to the indifference curve on which A is located. This gives a new optimal point C. The substitution effect is the change in quantity associated with this change, and since we have two goods, we could consider substitution effects in the <span class="math inline">\(x\)</span> or in the <span class="math inline">\(y\)</span> direction. We focus on <span class="math inline">\(x\)</span>.</p>
+<p>The income effect then asks: what drop in income from the dashed line brings us to the new solid line (where we choose point B)? The income effect is the change in quantity associated with this loss of purchasing power.</p>
+<p>Those two effects are marked on the horizontal axis as IE and SE, respectively. In the shown picture, they go in the same direction, and the total effect of the price change is the sum of both. The relative price increase makes the consumer substitute away from <span class="math inline">\(x\)</span> to <span class="math inline">\(y\)</span> along the original indifference curve through A and C, and the loss of purchasing power leads to additional reduction of demand for <span class="math inline">\(x\)</span>.</p>
+</div>
+<div class="g-col-6">
+<!-- Figure:........................................................... -->
+<div id="fig-incsubeffects" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-incsubeffects-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.1: Income and Substitution Effects
+</figcaption>
+<div aria-describedby="fig-incsubeffects-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<iframe src="https://edu.nl/j8xau" width="450" height="450" style="border: 1px solid #ccc"></iframe>
+</div>
+</figure>
+</div>
+<!-- End of Figure..................................................... -->
+</div>
+</div>
+<!-- End Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<div id="tip-onpaper" class="callout callout-style-default callout-tip no-icon callout-titled" title="Redo @fig-incsubeffects on Paper">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Exercise&nbsp;2.1: Redo <a href="#fig-incsubeffects" class="quarto-xref">Figure&nbsp;2.1</a> on Paper
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="#fig-incsubeffects" class="quarto-xref">Figure&nbsp;2.1</a> shows all there is to know to determine the income and substitution effects, both mathematically, and graphically. If you need a challenge, do the math and see if you can recover the values for IE and SE printed in the graph (hint: use the fact that both A and C are on utility level <span class="math inline">\(2.17\)</span>).</p>
+<p>To prepare for the exam, get yourself some graph paper and redraw <a href="#fig-incsubeffects" class="quarto-xref">Figure&nbsp;2.1</a> on a larger scale, then read off the numbers and compare with the given solution. If you want to get the indifference curves right, make a Desmos picture and print that out before inserting the budget constraint. Use a ruler for straight lines!</p>
+</div>
+</div>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-utilchanges" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="sec-utilchanges"><span class="header-section-number">2.6</span> Utility Changes</h2>
+<p>
+Relative price changes like those analyzed before, change the optimally chosen point and the level of utility that is maximally attainable. In <a href="#fig-incsubeffects" class="quarto-xref">Figure&nbsp;2.1</a>, this can be seen from the utility level lables on the indifference curves. We can measure the change in satisfaction, welfare or well-being as the difference in that maximally attainable level of utility (i.e., price goes up, utility goes down).
+</p>
+<p>
+There are two problems. The first is that utility is not observable to a policy maker, it is only known to the individual (if at all). The second problem is that with ordinal utility, that is also not comparable between people, there would be no good basis for making welfare statements were we to look directly at utility changes.
+</p>
+<p>
+Instead, economists have taken to look at changes in budgets. Budgets are in principle observable, and budget changes can be interpreted as being indicative of changes in welfare. If a relative price change can be undone in utility terms by a lump-sum payment of money from the government, say, then the size of that payment can be interpreted as being proportional to the change in welfare. What we would need to know from the consumer is at what point he or she feels indifferent between the before-price-change choice and the after-price-change-and-lump-sum-payment choice. Knowing the numerical utility value is then unimportant.
+</p>
+<!-- SubSubSection.................................................... -->
+</section>
+<section id="sec-incomesupport" class="level2" data-number="2.7">
+<h2 data-number="2.7" class="anchored" data-anchor-id="sec-incomesupport"><span class="header-section-number">2.7</span> Cash Transfers and Income Support</h2>
+<p>Income policy is often used by governments to support the needy. Needs can arise quickly under rising prices of particular goods or services, for instance energy. Governments sometimes try to limit or manipulate the price of those goods directly by way of subsidies, but doing so has the disadvantage that prices lose their flexibility and hence their function to effectively signal scarcity. Often, this results in larger inefficiencies. In addition, price manipulations are not per se targeted and may benefit the non-poor more than the poor.</p>
+<p>Whereas cash transfers may sound like an appropriate way to counteract an income drop caused by a price hike, the question is how much to compensate. After all, other individuals in the economy may have to pay more taxes when the government raises cash transfers. The following panel illustrates with an example of a needy citizen and a thrifty government.</p>
+<div id="cau-povertyCV" class="callout callout-style-default callout-caution no-icon callout-titled" title="Exact Compensation, not Overcompensation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example&nbsp;2.2: Exact Compensation, not Overcompensation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Jake consumes fuel and food, his income is a benefit from the municipality (represented by mayor Tom). Initially, Jake’s income <span class="math inline">\(m_0\)</span> corresponds to the poverty line. Fuel costs <span class="math inline">\(p_2=1\)</span> (always). Then, food prices double. Click through the tabs.</p>
+<div class="tabset-margin-container"></div><div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true" href="">1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false" href="">2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false" href="">3</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-4" role="tab" aria-controls="tabset-3-4" aria-selected="false" href="">4</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-5-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-5" role="tab" aria-controls="tabset-3-5" aria-selected="false" href="">5</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p><img src="images/shec_compvar_Page_04.png" class="img-fluid"></p>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<p><img src="images/shec_compvar_Page_05.png" class="img-fluid"></p>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<p><img src="images/shec_compvar_Page_06.png" class="img-fluid"></p>
+</div>
+<div id="tabset-3-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-4-tab">
+<p><img src="images/shec_compvar_Page_07.png" class="img-fluid"></p>
+</div>
+<div id="tabset-3-5" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-5-tab">
+<p><img src="images/shec_compvar_Page_08.png" class="img-fluid"></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>The story involves three possibilities for compensation that a policymaker could consider and that restore the purchasing possibilities after the price increase has taken place. For notational clarity (and since the price of <span class="math inline">\(y\)</span> does not change), let us focus solely on the price of good <span class="math inline">\(x\)</span>. Denote <span class="math inline">\(p_0\)</span> as the price that applied before, and <span class="math inline">\(p_1\)</span> as the price that applied after the change. Denote with <span class="math inline">\(\Delta_m\)</span> the extra money that the consumer gets as compensation.</p>
+<p>The first compensation scheme is the most generous and aims to fully undo the impact the citizen could possibly experience: in the case that the individual spends all their income on the affected good. Hence the compensation <span class="math inline">\(\Delta_m\)</span> should be such that it moves the entire budget constraint to the right, until the point where real income (here understood as money income deflated by the price of <span class="math inline">\(x\)</span>) is unchanged: <span class="math display">\[\frac{m+\Delta_m}{p_1} = \frac{m}{p_0}.\]</span></p>
+<p>This type of full compensation is a costly one for the government and requires to raise a lot of revenue. Alternatively, a second possibility that could be entertained is to make sure that the consumer can afford to buy the originally chosen bundle also under the new set of prices. This would shift the budget constraint to the right as well, but only until it reaches the bundle that was chosen when <span class="math inline">\(p_x^\circ\)</span> applied. Such a compensation could be motivated with putting the consumer in a position to by the bundle after the price change saying that was chosen before. So, if the consumer then commands over <span class="math inline">\(m^\prime\)</span> which we can define through <span class="math display">\[m_1 = \Delta_m + m = p_1 \cdot D_x(p_0,m)\]</span> then <span class="math display">\[D_x(p_1,m_1) = D_x(p_0,m).\]</span> This compensation is sometimes referred to as <span class="smallcaps">Slutsky</span> compensation. In <a href="#fig-incsubeffects" class="quarto-xref">Figure&nbsp;2.1</a> it would come about as pivoting the budget constraint around the initial choice <span class="math inline">\(A\)</span>. Depending on how large the typical budget share is that the consumer spends on good <span class="math inline">\(x\)</span>, this compensation is considerably cheaper for the government than the full compensation considered before.</p>
+<p>As our story suggests, this type of compensation ignores the possibility that the consumer may actually choose something else than the original bundle under the new prices. So, if substitution effects play any role, we would expect the consumer to buy less of the inflationary good, and more of the other good (which became relatively cheaper). If we knew the utilty function or the indifference curve, we could further reduce the payment to the consumer and consider a compensation that leaves the consumer equally well off in utility terms before and after the price change. This is the <em>compensating variation</em> or <span class="smallcaps">Hicks</span> compensation. It tries to restore the utility or welfare level of citizens that were exposed to the price shock. From the government’s point of view this would be the least-cost option among the ones we have considered so far. The following subsection will illustrate this concept and also introduce the compensated demand function.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-compensating" class="level2" data-number="2.8">
+<h2 data-number="2.8" class="anchored" data-anchor-id="sec-compensating"><span class="header-section-number">2.8</span> Compensating Variation and Compensated Demand</h2>
+<p>We now turn to measuring welfare changes expressed in money terms. If you look at the intersection points of the budget constraint in a consumer choice diagram, they are equal to <span class="math inline">\(\frac{m}{p_x}\)</span> and <span class="math inline">\(\frac{m}{p_y}\)</span> (as you set either <span class="math inline">\(x=0\)</span> or <span class="math inline">\(y=0\)</span> in <span class="math inline">\(\eqref{eq:bc}\)</span>). Let’s focus on the vertical intercept, <span class="math inline">\(\frac{m}{p_y}\)</span>, and let’s renormalize the price of <span class="math inline">\(y\)</span> to be <span class="math inline">\(p_y=1\)</span>, always. Then, the size of the budget <span class="math inline">\(m\)</span> is equal to the vertical coordinate on the <span class="math inline">\(y\)</span> axis.</p>
+We use the apparatus of <a href="#sec-effects" class="quarto-xref">Section&nbsp;2.5</a> to measure welfare changes. In particular, consider an increase in <span class="math inline">\(p_x\)</span>, which makes the budget set smaller. The vertical intercept is not affected, but the budget constraint gets steeper.
+<p></p>
+<p>If we reconsider the mental exercise of splitting the price effect into a substitution and an income effect, we recall that the income effect can be obtained from an outward shift of the actual budget constraint after the price change to a budget level that affords the same level of utility as before the price change (when moving from B to C in <a href="#fig-incsubeffects" class="quarto-xref">Figure&nbsp;2.1</a>). This compensation payment to restore utility to its original value is called a <em>compensating variation</em> of income. It does not undo the price change, it only restores the utility level. Whereas we can imagine that a policy maker initiates such a compensation, we can also consider it to be a hypothetical change that does not actually happen.</p>
+<!-- Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<div class="grid">
+<div class="g-col-6">
+<p>How much is this in money terms? It is equal to the vertical difference between the after-price-change budget constraint intercept and the compensated budget constraint intercept. This is illustrated in <a href="#fig-compensating" class="quarto-xref">Figure&nbsp;2.2</a>, which is based on <a href="#fig-incsubeffects" class="quarto-xref">Figure&nbsp;2.1</a>. You can read off the amount of the compensating variation (CV) along the vertical axis. If you do the math, you can calculate it exactly given the model specification.</p>
+<p>In other words, we do the same as with the income effect, but instead of focusing on how the demanded quantity changes when income changes, we focus on the income change itself. Denote the budget before and after the price change by <span class="math inline">\(m_0\)</span> and <span class="math inline">\(m_1\)</span>, then <span class="math inline">\(\Delta_m = m_0-m_1 \lt 0\)</span> is the <em>money-metric</em> change in welfare that the consumer experiences from the price change, unless it is compensated with actually making sure the consumer would get <span class="math inline">\(m_1\)</span>. In our example, this welfare change is negative: when prices go up, welfare goes down.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Play!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Play!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="#fig-incsubeffects" class="quarto-xref">Figure&nbsp;2.1</a> lets you get a sense how IE, SE and CV change in this configuration using the the slider and choosing some other value of <span class="math inline">\(p_{x}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="g-col-6">
+<!-- Figure:........................................................... -->
+<div id="fig-compensating" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-compensating-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.2: Compensating Variation
+</figcaption>
+<div aria-describedby="fig-compensating-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+ <iframe src="https://edu.nl/yvcwp" width="450" height="450" style="border: 1px solid #ccc"></iframe>
+</div>
+</figure>
+</div>
+<!-- End of Figure..................................................... -->
+</div>
+</div>
+<!-- End Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<!-- Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<div class="grid">
+<div class="g-col-6">
+<p>Put differently again, the compensating variation equals (the negative of) the sum of money that the consumer would be just willing to accept from the policy maker in order to allow the price change to take place (if we were to think that the policy maker were in control of the price change, or was otherwise required to make compensation payments, perhaps for electoral reasons). Just willing to accept means being indifferent to.</p>
+<p><a href="#fig-compensated" class="quarto-xref">Figure&nbsp;2.3</a> illustrates compensated demand as obtained from sliding an expenditure line along a fixed indifference curve, and it shows the compensated variation in the lower diagram as a measure of welfare change (area “under” the demand curve when considering price changes).</p>
+<div id="nte-compdemand" class="callout callout-style-default callout-note no-icon callout-titled" title="Compensated Demand">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Remark&nbsp;2.1: Compensated Demand
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="#fig-compensated" class="quarto-xref">Figure&nbsp;2.3</a> depicts in its lower panel the so-called <strong>compensated demand</strong> function. Since we make the budget constraint trace the original indifference curve in the upper panel, we, as it were, keep compensating the consumer for the real income loss so she stays on her original level of utility. The compensated, green demand curve in <a href="#fig-compensated" class="quarto-xref">Figure&nbsp;2.3</a> is similar to, but different from, the ordinary demand curve in <span class="math inline">\(\eqref{eq:demx}\)</span>: it is corrected for the income effect. For the mathematical expression, this implies that the compensated demand curve does not depend on income, but instead it depends on the level of utility that we aim to keep fixed, <span class="math inline">\(\bar u\)</span>. The areas under the curve are color coded to indicate welfare losses (red) or welfare gains (green) from price change (up vs.&nbsp;down). When the price goes up, the compensating variation indicates a welfare loss since without increasing compensation payments, the consumer would be worse off than before the price hike. When the price falls, the compensating variation is a welfare gain, since the consumer would pay some money in order to reach the before-change utility level.</p>
+</div>
+</div>
+</div>
+<div class="g-col-6">
+<!-- Figure:........................................................... -->
+<div id="fig-compensated" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-compensated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2.3: Compensated Demand and Compensating Variation
+</figcaption>
+<div aria-describedby="fig-compensated-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+ <iframe src="https://edu.nl/gqehn" width="400" height="600" style="border: 1px solid #ccc"></iframe>
+</div>
+</figure>
+</div>
+<!-- End of Figure..................................................... -->
+</div>
+</div>
+<!-- End Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<!-- SECTION ********************************************************** -->
+</section>
+</section>
+<section id="sec-efficiency" class="level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Efficiency</h1>
+<div style="display:none">
+<span class="math inline">\(\nextSection\)</span>
+</div>
+<!-- SECTION ********************************************************** -->
+<p>We return to a microeconomic analysis similar to that of consumer choice, but abstract from prices and incomes. Instead, we consider a two-consumer-two-goods world, where each consumer is equipped with an endowment of the goods <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. But instead of selling the endowment on the market, consumers can trade with each other, keeping constant the total stock of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> that is available in this small model world. Thus, we study an exchange or barter economy.</p>
+<!-- SubSection........................................................ -->
+<section id="sec-edgeworth" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="sec-edgeworth"><span class="header-section-number">3.1</span> <span class="smallcaps">Edgeworth</span> Box</h2>
+<!-- Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<div class="grid">
+<div class="g-col-6">
+<p>Consumption efficiency can be illustrated in the simplest case by considering two people A and B in our two-good world of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. Both people care about both goods, and are equipped with initial endowments of each good. The question we now address whether everybody is happy with their endowments, or can things be improved? The answer is: in general, simply trading (exchanging) goods between people can raise welfare.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Play!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Play!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="#fig-Edgeworth" class="quarto-xref">Figure&nbsp;3.1</a>, steps 0-3, walks you through the construction of the <span class="smallcaps">Edgeworth</span> box. Press the toggle while reading on.</p>
+</div>
+</div>
+<p><a href="#fig-Edgeworth" class="quarto-xref">Figure&nbsp;3.1</a> (named <span class="smallcaps">Edgeworth</span> box, after English economist Francis Y. <span class="smallcaps">Edgeworth</span>) displays indifference curves for the two consumers. One of the consumers has the regular type of indifference curve system, with origin <span class="math inline">\(O_A\)</span> in the lower left corner. The amount of <span class="math inline">\(x\)</span> for this person is denoted <span class="math inline">\(x_A\)</span> and we read it off along the horizontal axis. Similarly, units of good <span class="math inline">\(y\)</span> for person A are read off along the vertical axis, labeled <span class="math inline">\(y_A\)</span>. We can think of drawing a similar diagram for person B.</p>
+<p>The total amount of both <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> available in this economy is given (meaning nothing is produced and nothing is wasted). There are <span class="math inline">\(\bar{x}\)</span> units of <span class="math inline">\(x\)</span> and <span class="math inline">\(\bar{y}\)</span> units of <span class="math inline">\(y\)</span> that can be allocated among the two persons. We assume the second person B owns all those units of <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> that are not owned by A: <span class="math inline">\(x_B=\bar{x}-x_A\)</span> and <span class="math inline">\(y_B=\bar{y}-y_A\)</span>.</p>
+</div>
+<div class="g-col-6">
+<!-- Figure:........................................................... -->
+<div id="fig-Edgeworth" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-Edgeworth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: <span class="smallcaps">Edgeworth</span> Box
+</figcaption>
+<div aria-describedby="fig-Edgeworth-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<iframe src="https://edu.nl/7xben" width="450" height="500" style="border: 1px solid #ccc"></iframe>
+</div>
+</figure>
+</div>
+<!-- End of Figure..................................................... -->
+</div>
+</div>
+<!-- End Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<p>Because of this restriction on overall resources, we can actually draw the two diagrams for persons A and B into a single graph: we simply flip the indifference curve diagram for person B around by 180<span class="math inline">\(^\circ\)</span> and superimpose it on the graph for A. That means, we read off all the units for B from right to left and from top to bottom, starting at the origin in the <em>upper right corner</em> at <span class="math inline">\(O_B\)</span>. From here, utility for B improves by going into the south-western direction. The length of the box is defined by total available amounts, <span class="math inline">\(\bar{x}\)</span> and <span class="math inline">\(\bar{y}\)</span>.</p>
+<p>The initial endowment we mentioned before can be any point in <a href="#fig-Edgeworth" class="quarto-xref">Figure&nbsp;3.1</a>; call it E. Each person can determine their utility level at this endowment point and each person has an indifference curve going through E.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-pareto" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="sec-pareto"><span class="header-section-number">3.2</span> <span class="smallcaps">Pareto</span> Efficiency</h2>
+<p>Can we make either person happier by reallocating resources and choosing a different point than the endowment? The answer is: generally, yes.</p>
+<p>Consider the indifference curve for person A going through the endowment point E. All points above (north-east) that curve are clear improvements. Similarly, consider the indifference curve for person B going through the endowment point. All points below (south-west) that curve are clear improvements for B. You can also shade the better-than-the-endowment set for B.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Play!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Play!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="#fig-Edgeworth" class="quarto-xref">Figure&nbsp;3.1</a>, steps 4-6, walks you through the construction of the better-than-sets in the <span class="smallcaps">Edgeworth</span> box. Press the toggle.</p>
+</div>
+</div>
+<p>If you do this, you will see that there are points where both persons improve: it is a lens-shaped area with the endowment point on one of its corners. So, if both individuals were to agree to swap units of their possessions so that they move from the endowment point to the interior of the lens, both will increase their utility.</p>
+<p>Since we want to assume that people trade only when they are not being made worse off, we know that if we make one person better off, we must not make the other one worse off. That is, the other person must stay at least on his or her initial indifference curve through E (otherwise, he or she would refuse to trade). Say, we fix the level of utility for person A. This means that we move <em>along</em> his or her indifference curve. We can keep doing this while improving person B’s utility, without making A worse off. Such an improvement is called a <span class="smallcaps">Pareto</span> improvement (named after Italian economist Vilfredo <span class="smallcaps">Pareto</span>, 1848–1923). We can also cast this appealing to the notion of one allocation being <span class="smallcaps">Pareto</span> preferred over another:</p>
+<div id="wrn-Ppref" class="callout callout-style-default callout-warning no-icon callout-titled" title="[Pareto]{.smallcaps} Preferred and [Pareto]{.smallcaps} Improvements">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition&nbsp;3.1: <span class="smallcaps">Pareto</span> Preferred and <span class="smallcaps">Pareto</span> Improvements
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An allocation <span class="math inline">\({\cal G}\)</span> is <span class="smallcaps">Pareto</span> preferred to allocation <span class="math inline">\({\cal F}\)</span> if by moving from <span class="math inline">\({\cal F}\)</span> to <span class="math inline">\({\cal G}\)</span> at least one agent is strictly better off, and no-one else loses (<span class="smallcaps">Pareto</span> improvement).</p>
+</div>
+</div>
+<p>The implication of being able to identify <span class="smallcaps">Pareto</span> improvements, is that mutual gains from trade can be realized. In plain language, these are win-win situations. How far can we go? That’s the domain of <span class="smallcaps">Pareto</span> efficiency:</p>
+<div id="wrn-Peff" class="callout callout-style-default callout-warning no-icon callout-titled" title="[Pareto]{.smallcaps} Efficient">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition&nbsp;3.2: <span class="smallcaps">Pareto</span> Efficient
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An allocation is <span class="smallcaps">Pareto</span> efficient if there is no allocation which is <span class="smallcaps">Pareto</span> preferred to it (<span class="smallcaps">Pareto</span> superior).</p>
+</div>
+</div>
+<p>In other words, when agents A and B keep searching for mututal improvements, in the limit, all possibilities for <span class="smallcaps">Pareto</span> improvement will be exhausted, and no further improvements are possible anymore. That’s our intuitive notion of efficiency.</p>
+<p>To see this in the box of <a href="#fig-Edgeworth" class="quarto-xref">Figure&nbsp;3.1</a>, if we keep moving away from the endowment point along A’s initial indifference curve, we will reach a point where we cannot further improve B’s utility. This is where both persons’ indifference curves are just tangential. Here, both individuals’ indifference curves have the same marginal rate of substitution, the same slope (see <a href="#sec-constrained" class="quarto-xref">Section&nbsp;2.1</a>). <span class="math display">\[\begin{equation}
+\label{eq:mrsaismrsb}
+\mathrm{MRS}^A = \mathrm{MRS}^B.
+\end{equation}\]</span></p>
+<p>Once we are in such a point where the MRS of both consumers are the same, we cannot improve anyone’s situation without making the other person worse off. Such allocations are called <span class="smallcaps">Pareto</span> efficient: no-one can be made better off, unless we make at least one person in the economy worse off.</p>
+<p>Recall that the marginal rate of substitution is the rate at which, say person A, is willing to give up units of <span class="math inline">\(y\)</span> in receipt for one extra unit of <span class="math inline">\(x\)</span>; similar for B. Therefore, at a point of <span class="smallcaps">Pareto</span> efficiency, where the tangency condition holds, A is prepared to give up as much of <span class="math inline">\(y\)</span> as B would need to get of <span class="math inline">\(y\)</span> as compensation when one unit of <span class="math inline">\(x\)</span> changes hands from B to A.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Play!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Play!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="#fig-Edgeworth" class="quarto-xref">Figure&nbsp;3.1</a>, steps 7-8, encourages you to find first one, and then all the points where <span class="smallcaps">Pareto</span> improvements have disappeared (here, by sliding the endowment, but it could be any allocation).</p>
+</div>
+</div>
+<p>As the exercise shows, there are many allocations in which the <span class="smallcaps">Pareto</span> efficiency condition <span class="math inline">\(\eqref{eq:mrsaismrsb}\)</span> holds. The entire set, or locus, of such points is called <em>contract curve</em>. If you reset the endowment point in <a href="#fig-Edgeworth" class="quarto-xref">Figure&nbsp;3.1</a> to its initial position, you may realize that only a small segment of that <em>contract curve</em> will be considered by individuals that trade voluntarily. These are the points between the two persons’ indifference curves going through point E, or the points on the contract curve that are also in the green set of <span class="smallcaps">Pareto</span> improvements. All other points outside that lens-shaped area will not qualify since trade starting from E will be blocked by at least one of the agents (since they’d lose). Allocations that will not be blocked are said to be in the <em>core</em> of the economy. This is the thick segment of the contract curve in <a href="#fig-Edgeworth" class="quarto-xref">Figure&nbsp;3.1</a>.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Play!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Play!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="#fig-Edgeworth" class="quarto-xref">Figure&nbsp;3.1</a>, step 9, illustrates the contract curve and the core.</p>
+</div>
+</div>
+<p>Since the lens-shaped area of <span class="smallcaps">Pareto</span> improvements changes with the position of the endowment, so does the core. The further the endowment is positioned into one of the off-diagonal (north-west or south-east) corners of the box, the larger the lens and the larger the core.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-contract" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="sec-contract"><span class="header-section-number">3.3</span> Contract Curve</h2>
+<p>How many <span class="smallcaps">Pareto</span> efficient allocations are there? There are many points of tangency of two indifference curves inside the lens-shaped area of <a href="#fig-Edgeworth" class="quarto-xref">Figure&nbsp;3.1</a>. They all are <span class="smallcaps">Pareto</span> efficient. In each of them we have that a deviation makes at least one person worse off in terms of their utility. But the lens-shaped area also changes with the position of the endowment. The further the endowment is positioned into one of the off-diagonal (north-west or south-east) corners of the box, the larger the lens and the larger the set of <span class="smallcaps">Pareto</span> efficient allocations.</p>
+<p>Since the trade is voluntary, the curve indicating all <span class="smallcaps">Pareto</span> efficient allocations has a special name: <em>contract curve</em>. It is called that way because each person would sign a trade contract with the other person, yielding a position of the highest possible level of utility from where further mutual gains from trade are not possible anymore.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>You can display the contract curve of <span class="smallcaps">Pareto</span> efficient allocations by pressing the toggle button in <a href="#fig-Edgeworth" class="quarto-xref">Figure&nbsp;3.1</a>.</p>
+</div>
+</div>
+<p>Summarizing, we have shown that trade between two people will generally lead to <span class="smallcaps">Pareto</span> improvements, and we have determined the set of optimal allocations that are feasible. In all of the efficient points we have that the marginal rates of substitution between all individuals are equalized.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-paretian" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="sec-paretian"><span class="header-section-number">3.4</span> Paretian Welfare Criterion</h2>
+<p>Equipped with a definition of <span class="smallcaps">Pareto</span> improvements and <span class="smallcaps">Pareto</span> efficiency, we can now move on to a welfare criterion for society. We could say that trade should happen (note the normative wording) whenever <span class="smallcaps">Pareto</span> improvements are possible. Conversely, trades should not happen where such improvements cannot be had. In other words, we allow social change in terms of who commands of what resources only for cases where at least one person gets better off, and no-one else loses. This is the Paretian welfare criterion, and it is solely based on voluntary trade. It is fully individualistic since all we do is to assess individual utility improvements. The concept does therefore need nothing else than our earlier, ordinal utility functions which levels have no meaning (except that they imply a ranking).</p>
+<div class="callout callout-style-default callout-important callout-titled" title="The Central Concept of [Pareto]{.smallcaps} Efficiency">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Central Concept of <span class="smallcaps">Pareto</span> Efficiency
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>The <span class="smallcaps">Edgeworth</span> box assumes ordinal preferences and defines an endowment E of all goods distributed between all agents of an exchange economy.</li>
+<li>Voluntary trade implies that trade between agents of units of good in exchange for some of the other goods will only happen to the extent that no agent will be worse off in terms of their own utility after the trade.</li>
+<li>Proposed allocations where someone would end up worse, will be blocked (or vetoed) by the affected agent(s).</li>
+<li>Acceptable allocations are <span class="smallcaps">Pareto</span> preferred to E (are <span class="smallcaps">Pareto</span> improvements).</li>
+<li>Absence of further <span class="smallcaps">Pareto</span> improvements implies <span class="smallcaps">Pareto</span> efficiency.</li>
+<li>In all of the efficient points we have that the marginal rates of substitution between all agents are equalized.</li>
+<li>The locus of all <span class="smallcaps">Pareto</span> efficient allocations is the contract curve.</li>
+<li><span class="smallcaps">Pareto</span> efficient allocations that can be reached by voluntary trade from E are feasible and constitute the core.</li>
+<li><span class="smallcaps">Pareto</span> efficiency is a conservative, individualistic measure of economic welfare.</li>
+</ul>
+</div>
+</div>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-allocative" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="sec-allocative"><span class="header-section-number">3.5</span> Allocative Efficiency</h2>
+<p><span class="smallcaps">Pareto</span> efficiency has been introduced in the context of an exchange environment, where a given endowment is possibly traded. But we needed no production. If we do allow for production, we can move on to <em>allocative efficiency</em>. Allocative efficiency means that the optimal plans for consumers and producers are aligned. The concept describes situations where not only the marginal rates of substitution are equalized across consumers but where those also coincide with the marginal rate of transformation between two goods.</p>
+<p>Formally, it holds that <span class="math display">\[\begin{equation}
+\label{eq:mrtmrs}
+\mathrm{MRT} = \mathrm{MRS}^A = \mathrm{MRS}^B.
+\end{equation}\]</span> Recall from production theory that the MRT is the (absolute value of the) slope of the production possibilities frontier, PPF.</p>
+<!-- Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<div class="grid">
+<div class="g-col-6">
+<p>We can illustrate condition <span class="math inline">\(\eqref{eq:mrtmrs}\)</span> with <a href="#fig-ppfedge" class="quarto-xref">Figure&nbsp;3.2</a>. From the perspective of the PPF, we produce at point <span class="math inline">\(O_B\)</span>, and here we measure the MRT as the (absolute) slope of the PPF at that point. Production at <span class="math inline">\(O_B\)</span> however means that a corresponding amount of each good <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> is going to be available for the consumers to consume. This is where the <span class="smallcaps">Edgeworth</span> box comes in (recall that the size of the box is determined by the amounts of goods that are available). Inside the box we have drawn again a contract curve. Suppose individuals <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> reach <span class="math inline">\(F\)</span>, the point of tangency of their indifference curves on the contract curve. This is where in the end consumption takes place. The slope of the indifference curves is equal to the marginal rate of substitution for both consumers.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Play!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Play!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="#fig-ppfedge" class="quarto-xref">Figure&nbsp;3.2</a> offers (limited) possibilities to show where allocative efficiency, <span class="math inline">\(\eqref{eq:mrtmrs}\)</span>, might hold. You can shift two points: <span class="math inline">\(O_B\)</span> along the PPF, and the black dot on the vertical axes to expand or shrink the PPF. Try to find an allocation in which <span class="math inline">\(\eqref{eq:mrtmrs}\)</span> holds.</p>
+</div>
+</div>
+</div>
+<div class="g-col-6">
+<!-- Figure:........................................................... -->
+<div id="fig-ppfedge" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-ppfedge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.2: PPF and <span class="smallcaps">Edgeworth</span> Box
+</figcaption>
+<div aria-describedby="fig-ppfedge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<iframe src="https://edu.nl/3rwb8" width="450" height="500" style="border: 1px solid #ccc"></iframe>
+</div>
+</figure>
+</div>
+<!-- End of Figure..................................................... -->
+</div>
+</div>
+<!-- End Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<p>Let us now argue by contradiction that <span class="math inline">\(\eqref{eq:mrtmrs}\)</span> must hold in an efficient allocation. Suppose equality <span class="math inline">\(\eqref{eq:mrtmrs}\)</span> would not hold, but was instead <span class="math inline">\(\mathrm{MRT} &gt; \mathrm{MRS}^A = \mathrm{MRS}^B\)</span>. Say that <span class="math inline">\(\mathrm{MRT}=3\)</span> and <span class="math inline">\(\mathrm{MRS}^i=2\)</span>. That means, consumers are willing to give up 1 unit of <span class="math inline">\(x\)</span> if they get 2 more units of <span class="math inline">\(y\)</span> in return. Producers, however, could transform <span class="math inline">\(x\)</span> into <span class="math inline">\(y\)</span> at the rate 1:3 so, by reducing the production of <span class="math inline">\(x\)</span> by one unit, 3 more units of <span class="math inline">\(y\)</span> could be produced (thereby sliding <span class="math inline">\(O_B\)</span> along the PPF to the north-west). But consumers only need 2 extra units of <span class="math inline">\(y\)</span> to be happy. They now get one extra unit! A free lunch! Magic? By no means. It just implies that in the original situation we had not been simultaneously producing and consuming efficiently.</p>
+<div id="nte-MRTMRS" class="callout callout-style-default callout-note no-icon callout-titled" title="Relation between Allocative and [Pareto]{.smallcaps} Efficiency">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Remark&nbsp;3.1: Relation between Allocative and <span class="smallcaps">Pareto</span> Efficiency
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>As <a href="#fig-ppfedge" class="quarto-xref">Figure&nbsp;3.2</a> illustrates, there are many situations that allow for allocative efficiencies, but they may differ across scenarios and depend on the size of the economy (production sector) and location of endowments. Typically, the set of allocative efficient points is a subset of the set of <span class="smallcaps">Pareto</span> efficient ones, as <span class="math inline">\(\eqref{eq:mrtmrs}\)</span> is a stronger condition than <span class="math inline">\(\eqref{eq:mrsaismrsb}\)</span>.</p>
+</div>
+</div>
+<p>We can now look back at the concepts of efficiency and welfare as known from the concepts of consumer and producer surplus. There, maximum welfare would be attained where the last unit sold was worth to consumers as much as it would cost firms to produce it, or where marginal benefit equals marginal cost. This is the one-market equivalent to the one we have just discussed when looking at two markets, <span class="math inline">\(\eqref{eq:mrtmrs}\)</span>.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-socialpl" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="sec-socialpl"><span class="header-section-number">3.6</span> Social Planner</h2>
+<p>How do we achieve this optimal state of the world where all three types of efficiency hold simultaneously? One possibility is to introduce the notion of a social planner. This is a person or institution who asks consumers about their preferences and producers about their technology and comes up with the solution after having worked through the math. The planner will then tell producers and consumers what to do. The social planner has no other objective than to maximize welfare, and since he or she commands over full information, the implementation of his plan does result in the optimal outcome. Communism was supposed to work this way.</p>
+<!-- SECTION ********************************************************** -->
+</section>
+</section>
+<section id="sec-equitywelfare" class="level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span> Equity and Social Welfare</h1>
+<div style="display:none">
+<span class="math inline">\(\nextSection\)</span>
+</div>
+<!-- SECTION ********************************************************** -->
+<!-- SubSection........................................................ -->
+<section id="sec-upf" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="sec-upf"><span class="header-section-number">4.1</span> Utility Possibilities Frontier</h2>
+<!-- Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<div class="grid">
+<div class="g-col-6">
+<p>The utility possibilities frontier (UPF) shows the maximally achievable <em>level</em> of utility in a two-person economy for one agent, given the utility level of the other agent. In a single-good setting, where utilities are functions of just one argument, perhaps an aggregate consumption good <span class="math inline">\(c\)</span>, <span class="math inline">\(u(c)\)</span>, we can use a graph as in <a href="#fig-upf" class="quarto-xref">Figure&nbsp;4.1</a>. It shows in the NW (north-west) and SE (south-east) quadrants two such utility functions from two different individuals <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span>. The linear constraint in the SW quadrant (south-west) of <a href="#fig-upf" class="quarto-xref">Figure&nbsp;4.1</a> serves as the total restriction on available resources <span class="math inline">\(\bar c\)</span>, and we just need to decide how to allocate it between consumers. The resultant function in the first (NE) quadrant then is the UPF. Hence, there is an easy and intuitive way to grasp what ‘utility possibilites’ entails.</p>
+<div class="callout callout-style-default callout-tip callout-titled" title="Explore">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Explore
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Shift the green dot along the SW constraints to trace out the UPF in the NE quadrant.</li>
+<li>Shift the black dot to increase or decrease the total available stock of the consumption good and see how it changes the location of the UPF.</li>
+<li>Shift the purple dots to change the shape of the utility function and study the effect on the shape of the UPF.</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="g-col-6">
+<!-- Figure:........................................................... -->
+<div id="fig-upf" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-upf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Constructing the UPF with 1 Good
+</figcaption>
+<div aria-describedby="fig-upf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<iframe src="https://edu.nl/q49eg" width="500" height="500" style="border: 1px solid #ccc"></iframe>
+</div>
+</figure>
+</div>
+<!-- Figure:........................................................... -->
+</div>
+</div>
+<!-- End Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<p>
+Returning to our two-commodity world with goods <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span> and the <span class="smallcaps">Edgeworth</span> box diagram <a href="#fig-Edgeworth" class="quarto-xref">Figure&nbsp;3.1</a>, adds another layer of complication. This is because there are gains from trade to be realized between consumers when exchanging <span class="math inline">\(x\)</span> for <span class="math inline">\(y\)</span>, an aspect that is not relevant with just a single good. However, our analysis before has shown that trade in the <span class="smallcaps">Edgeworth</span> box will find a <span class="smallcaps">Pareto</span> efficient allocation on the contract curve.
+</p>
+<!-- Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<div class="grid">
+<div class="g-col-6">
+<p>Let us now consider a move <em>along</em> the contract curve, starting at any point on it. Say, we pick a point in the lower-left region of the <span class="smallcaps">Edgeworth</span> box, <a href="#fig-upf_edge" class="quarto-xref">Figure&nbsp;4.2</a>, say <span class="math inline">\(R\)</span>. Consider that each person has their own utility level at such a point, call them <span class="math inline">\(u^A_\texttt{I}\)</span> and <span class="math inline">\(u^B_\texttt{III}\)</span>. Now, draw a new diagram with utility levels <span class="math inline">\(u_A\)</span> and <span class="math inline">\(u_B\)</span> on the axes. Add the point from the <span class="smallcaps">Edgeworth</span> box with coordinates <span class="math inline">\(u^A_\texttt{I}\)</span> and <span class="math inline">\(u^B_\texttt{III}\)</span>. Then, follow the contract curve in the <span class="smallcaps">Edgeworth</span> box diagram in a north-eastern direction and pick a new point, say <span class="math inline">\(Q\)</span>, and add the associated utility levels in your new diagram, <span class="math inline">\(u^A_\texttt{II}\)</span> and <span class="math inline">\(u^B_\texttt{II}\)</span>, and so on. Then, connect the dots. Your new graph may show a curve along which utility of person A increases, while utility of person B decreases.</p>
+</div>
+<div class="g-col-6">
+<!-- Figure:........................................................... -->
+<div id="fig-upf_edge" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-upf_edge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.2: Constructing the UPF with 2 Goods
+</figcaption>
+<div aria-describedby="fig-upf_edge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/upf_edge.jpg" class="img-fluid figure-img">
+</div>
+</figure>
+</div>
+<!-- Figure:........................................................... -->
+</div>
+</div>
+<!-- End Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<p>Analogously to a production possibility frontier (PPF) of two countries or two firms, the new curve in the <span class="math inline">\(u_A\)</span> and <span class="math inline">\(u_B\)</span> diagram defines a <em>utility possibility frontier</em> (UPF). The UPF embodies a tradeoff: since consumption utility is derived from what each person consumes, moving a unit of a consumption good from one person to another without changing the overall resources (size of the <span class="smallcaps">Edgeworth</span> box), involves that a higher utility of one person comes at the expense of the other person’s utility. We would then be moving <em>along</em> the UPF (in a similar way as we had been moving along the contract curve in the left panel of <a href="#fig-upf_edge" class="quarto-xref">Figure&nbsp;4.2</a>). On the UPF we have, as we have on the contract curve, <span class="smallcaps">Pareto</span> efficiency. Any move away from the UPF is either infeasible (to the north-east), or leaves gains from trade unexploited (to the interior).</p>
+<div id="nte-shapeUPF" class="callout callout-style-default callout-note no-icon callout-titled" title="Shape of the UPF">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Remark&nbsp;4.1: Shape of the UPF
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We could conceive of the graph of a UPF as analogous to the graph of a PPF, and it actually is often drawn to be strictly concave (bowed outwards) for convenience. Concavity, however, is not necessary to assume.</p>
+</div>
+</div>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-equity" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="sec-equity"><span class="header-section-number">4.2</span> Equity</h2>
+<p>We have seen that there are possibly many <span class="smallcaps">Pareto</span> efficient allocations (all points on the utility possibility frontier). If we were to apply the <span class="smallcaps">Pareto</span> criterion to evaluate possible allocations, the exercise would stop there. This is because the <span class="smallcaps">Pareto</span> criterion does not allow us to go beyond the point where no-one’s position can be improved without making the position of someone else worse.</p>
+<p>Can we say more? It turns out that we can, under certain additional assumptions. We may want to incorporate fairness or equity since we may think that some allocations are more fair (more equitable) than others. The two points where the UPF cuts the axes in the Figure below for instance, are allocations that are <span class="smallcaps">Pareto</span> efficient. They allocate all resources in the economy to one person A or B, without leaving any utility to the other person, however. Many believe this not to be fair.</p>
+<p>Issues of equity require ethical judgments. They also require that we can make <em>interpersonal comparisons of utility levels</em>, something that we did not need until now. This is because we may want to compare two <span class="smallcaps">Pareto</span> efficient allocations and judge which is ‘better’. If we are to go along the UPF, we certainly make one person worse off and the other one better off. We then leave the straightjacket concept of the <span class="smallcaps">Pareto</span> criterion, since such a move could not happen under voluntary trade. In order to operationalize such comparisons, we first need to be able to measure utility of individuals in comparable units, and if there is a difference in utility levels we need to be able to tell how big that difference is.</p>
+<p>There has been a long debate in the history of economic thought as to whether this is actually possible. The standard approach only requires us to say something about the ranking or ordering of indifference curves, but the utility labels attached to indifference curves have had no meaning. In order to make efficient choices, it was not necessary to say: an apple is worth 3 ‘utils’ to Paul and 5 ‘utils’ to Clara, so we should take a slice of the apple away from Clara and give it to Paul in order for each person to have the same level of utility of 4 ‘utils’.</p>
+<p>What is more, we need to express how society relates individual utilities to each other. A rule that tells how ‘social welfare’ derives from ‘individual welfares’ (or utilities), is called a <em>social welfare function</em> (SWF). It is an eminently important concept in public economics, in the part of economics that explicitly deals with the collective choices of society.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-swf" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="sec-swf"><span class="header-section-number">4.3</span> Social Welfare Function</h2>
+<p>In an approach advocated by <span class="smallcaps">Bergson</span> and <span class="smallcaps">Samuelson</span>,social welfare as the welfare of society at large is a function of individual utilities, and nothing else. The SWF may be written as follows: <span class="math display">\[\mbox{social welfare} = W(u^A,u^B).\]</span> This is a rather generic way of writing things down. We can now do the thought experiment and increase utility of person A, say, while keeping utility of B constant. We can do this by giving that person a bit of a commodity that he likes. Say, an apple. This variation (<span class="math inline">\(u^A\)</span> goes up) may increase social welfare, that is, society may be better off since one person gets better off (<span class="math inline">\(W\)</span> goes up as well). But <span class="math inline">\(W\)</span> may also rise if the apple that we give to person A is taken away from person B. That is, even though this is not a <span class="smallcaps">Pareto</span> improvement, society may be better off from just redistributing resources differently between people; and yes, there may be losers.</p>
+<p>It is one thing to say that social welfare should be based on individual utilities. But there are many different ways in which the function <span class="math inline">\(W\)</span> combines these individual utilities. As the example just mentioned shows, the SWF criterion can involve considerations <em>beyond</em> individual values and express what society thinks about equity. Putting it this way highlights that society is more than just a collection of individuals. Society has preferences of its own, has, as it were, a ‘utility function’ of its own.</p>
+<p>It may help to illustrate the SWF concept with particular functional forms. Three popular expressions for a SWF are <span class="math display">\[\begin{eqnarray}
+\label{eq:SWFU}
+\mathrm{utilitarian:}\;\; W(u^A,u^B) &amp;=&amp;  u^A  + u^B\\
+\label{eq:SWFC}
+\mathrm{convex:}\;\;      W(u^A,u^B) &amp;=&amp; u^A \times u^B\\
+\label{eq:SWFR}
+\mathrm{Rawls:}\;\;       W(u^A,u^B) &amp;=&amp; \min\{ u^A,u^B \}
+\end{eqnarray}\]</span> Let us assume that all utilities are strictly positive, <span class="math inline">\(u^A &gt; 0\)</span> and <span class="math inline">\(u^B &gt; 0\)</span>, a necessary condition for <span class="math inline">\(\eqref{eq:SWFC}\)</span> to make sense.</p>
+<p>Characterizing social welfare functions as utility functions of society we can now move on to depict them in a diagram using social indifference curves. This is done in <a href="#fig-swf" class="quarto-xref">Figure&nbsp;4.3</a>. The arguments of <span class="math inline">\(W(\cdot)\)</span> are <span class="math inline">\(u^A\)</span> and <span class="math inline">\(u^B\)</span>, and thus we depict the social indifference curves in a graph with individual utilities on the axes.</p>
+<!-- Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<div class="grid">
+<div class="g-col-6">
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Play!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Play!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="#fig-swf" class="quarto-xref">Figure&nbsp;4.3</a> allows you to switch between the various cases <span class="math inline">\(\eqref{eq:SWFU}\)</span>-<span class="math inline">\(\eqref{eq:SWFR}\)</span> to depict social indifference curves (level curves of the social welfare function). Notice how the various shapes are reminiscent of consumer indifference curves and straddle extreme cases.</p>
+</div>
+</div>
+<p>The first social welfare function <span class="math inline">\(\eqref{eq:SWFU}\)</span> is the easiest one: welfare of society is just the sum of individual utilities. It was proposed by a school of English economists that called themselves utilitarians, hence the name. The utilitarian function is often associated with the name of Jeremy <span class="smallcaps">Bentham</span>, founding father of the utilitarian philosophy. Suppose social welfare were fixed at some initial level <span class="math inline">\(\overline{W}\)</span>, then <span class="math inline">\(\overline{W} = u^A + u^B\)</span>, or <span class="math inline">\(u^A=\overline{W}-u^B\)</span>. In a graph with utilities <span class="math inline">\(u^A\)</span> and <span class="math inline">\(u^B\)</span> on the axes, the social indifference curve map is therefore a set of declining straight lines.</p>
+<p>Suppose the individual utility levels were 2 and 2, then social welfare would be 4. Similar for 1 and 3 or 0.0001 and 3.9999. The utilitarian concept only cares about the sum, and not about the distribution of utilities between individual members of society. Accordingly, it is okay when society has both people with high and people with low levels of utility. Taking the apple from B and giving it to A does not change the level of <span class="math inline">\(W\)</span> (even though it changes both <span class="math inline">\(u^A\)</span> and <span class="math inline">\(u^B\)</span>).</p>
+</div>
+<div class="g-col-6">
+<!-- Figure:........................................................... -->
+<div id="fig-swf" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-swf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.3: Social Welfare Function and Optimal Social Choice
+</figcaption>
+<div aria-describedby="fig-swf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+  <iframe src="https://edu.nl/xpxvj" style="border: 1px solid #ccc; margin-right: -150px; height: 500px; margin-bottom: -0px; width: 450px;"></iframe>
+</div>
+</figure>
+</div>
+<!-- End of Figure..................................................... -->
+</div>
+</div>
+<!-- End Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<p>The second function <span class="math inline">\(\eqref{eq:SWFC}\)</span> is similar in spirit, yet different in functional form. The consequence is that very unequal distributions of utilities lead to lower levels of social welfare. Imagine again that individual utility levels were 2 and 2, then social welfare would be 4. But if individual utility levels were 0.0001 and 3.9999, social welfare would be 0.0004. That is the reason why the social indifference curve is convex to the origin. The economic interpretation is that unequal distributions are not appreciated as much by society as relatively equal distributions. Taking the apple from B and giving it to A will increase the level of <span class="math inline">\(W\)</span> (despite <span class="math inline">\(u^B\)</span> decreasing). This convex function is sometimes associated with the name of John <span class="smallcaps">Nash</span>.</p>
+<p>The last social welfare function <span class="math inline">\(\eqref{eq:SWFR}\)</span> is associated with American philosopher John <span class="smallcaps">Rawls</span>. He posed the question: how would you evaluate the welfare of society before you knew which particular level of <span class="math inline">\(u\)</span> you would end up with in life? That is, social welfare should be evaluated from behind a ‘veil of ignorance’, before actual levels of individual welfare are revealed. <span class="smallcaps">Rawls</span> continued to argue that the only just measure of social welfare is the utility of the person who is the worst off. That is the reason why social welfare is equal to the minimum of individual utilities, and why social indifference curves have a kink. The kinks are located on a ray of 45<span class="math inline">\(^\circ\)</span> through the origin. Continuing the numerical example from above, social welfare according to <span class="math inline">\(\eqref{eq:SWFR}\)</span> has value 2 if individual utilities are 2 and 2, but has value 0.0001 if individual utilities are 0.0001 and 3.9999. Social progress, defined by increasing <span class="math inline">\(W\)</span>, can only be made by improving the situation of the worst-off members of society. Giving the apple to A helps to increase <span class="math inline">\(W\)</span> only if there is no-one else below him in the ranking.</p>
+<div id="nte-prefagg" class="callout callout-style-default callout-note no-icon callout-titled" title="[Atkinson]{.smallcaps}-SWF">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-26-contents" aria-controls="callout-26" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Remark&nbsp;4.2: <span class="smallcaps">Atkinson</span>-SWF
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-26" class="callout-26-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The reader may have noticed that the three special cases <span class="math inline">\(\eqref{eq:SWFU}\)</span>-<span class="math inline">\(\eqref{eq:SWFR}\)</span> also correspond to CES indifference curve maps (with limit cases of perfect substitutes and perfect complements, see <strong>?@fig-icces</strong>). In fact, we can go further and define, following work by Anthony <span class="smallcaps">Atkinson</span>, a class of social welfare functions that includes the foregoing as special cases. The SWF is then defined as</p>
+<p><span class="math display">\[W_{Atkinson}(u^A,u^B) = \frac{1}{1-\varepsilon}\left((u^A)^{1-\varepsilon}+(u^B)^{1-\varepsilon}\right).\]</span></p>
+<p>When <span class="math inline">\(\varepsilon\to 0\)</span>, we obtain the utilitarian case, when <span class="math inline">\(\varepsilon\to \infty\)</span>, we obtain the <span class="smallcaps">Rawls</span>ian case, and when <span class="math inline">\(\varepsilon\)</span> is in between, we have some version of the convex case. Further, when utility of income itself is linear, as in <span class="math display">\[u^A(y^A) =y^A,\]</span> say, then <span class="math inline">\(\varepsilon\)</span> is indicative of society’s aversion to income inequality. Indeed in the <span class="smallcaps">Rawls</span>ian case the aversion is extreme and inequality intolerable, in the utilitarian case, inequality plays no direct role.</p>
+</div>
+</div>
+</div>
+<p>Summarizing, the social welfare function tells us about the preferences that the social planner (or relevant decision makers such as politicians or political parties) has with respect to the distribution of individual welfares. What, then, does the planner choose? The answer suggests itself from <a href="#fig-swf" class="quarto-xref">Figure&nbsp;4.3</a>: the social planner chooses a point on the utility possibility frontier (UPF) that yields the highest possible social welfare level. This is achieved where a social indifference curve just touches the UPF at point F. With the three considered examples of SWFs, we make three different socially optimal choices. The procedure is fully analogous to consumers choosing an optimal consumption basket subject to a budget constraint. The social welfare maximizing point F is sometimes called the <span class="smallcaps">Pareto</span> optimum or the first-best allocation: the best of all <span class="smallcaps">Pareto</span> efficient allocations.</p>
+<div id="nte-prefagg" class="callout callout-style-default callout-note no-icon callout-titled" title="Preference Aggregation">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Remark&nbsp;4.3: Preference Aggregation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>An important question is, how is it possible to aggregate individual preferences into social preferences? The area of social choice theory deals with that question. The way we aggregate preferences in practice in order to make a social choice is determined through democratic elections and the political process.</p>
+</div>
+</div>
+<p>One important implication of the exercise in <a href="#fig-swf" class="quarto-xref">Figure&nbsp;4.3</a> is: If society is interested in achieving efficiency and has particular preferences about (in)equality or equity, first-best means there is no implicit price to be paid in terms of efficiency loss associated with pursuing equity goals. In other words, you can have both your cake and eat it. The next chapter will tell us that, under stringent assumptions, the first-best can be achieved using decentralized decision making through market interaction.</p>
+<!-- SECTION ********************************************************** -->
+</section>
+</section>
+<section id="sec-markets" class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Markets, Welfare Theorems, and The Second Best</h1>
+<div style="display:none">
+<span class="math inline">\(\nextSection\)</span>
+</div>
+<!-- SECTION ********************************************************** -->
+<!-- SubSection........................................................ -->
+<section id="sec-prices" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="sec-prices"><span class="header-section-number">5.1</span> Prices</h2>
+<p>There is an alternative to coordination via a central social planner. This is decentral coordination via the price system, which characterizes a market economy. It is decentralized since our two persons <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> would be unlikely to haggle about giving up one liter of milk for 0.71 kg of potatoes, if that was their implied optimal rate of substitution. In reality, the two would not even meet. All they need to do is to go to the grocery store and buy these products at a given price. Note that if there are only two goods available, there is only one price that really matters: the relative price between milk and potatoes.</p>
+<p>Note in addition that we have implicitly introduced a further assumption, namely that none of the market actors (consumers or producers) has any direct influence on the price (price taker behavior). This is a setting of perfectly competitive markets. We shall also assume that changes in prices will come about instantaneously and costlessly.</p>
+<!-- Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<div class="grid">
+<div class="g-col-6">
+<p>To illustrate what prices do, consider the <span class="smallcaps">Edgeworth</span> box again, now redrawn in <a href="#fig-prices" class="quarto-xref">Figure&nbsp;5.1</a>. We have drawn a ‘budget line’ through the point of initial endowment <span class="math inline">\(E\)</span>, and its (absolute) slope is the relative price between the goods <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>, <span class="math inline">\(\displaystyle \frac{p_x^\circ}{p_y^\circ}\)</span> (<span class="math inline">\(p_x^\circ\)</span> denotes a particular value of <span class="math inline">\(p_x\)</span>). What persons <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> both do in a market economy is to choose a level of utility where their own marginal rate of substitution equals the relative price, <span class="math inline">\(\mathrm{MRS}^i=\frac{p_x^\circ}{p_y^\circ},\qquad i=A,B.\)</span></p>
+<p>That means that automatically all marginal rates of substitutions are equalized across consumers, because the relative price applies to everybody. In <a href="#fig-prices" class="quarto-xref">Figure&nbsp;5.1</a>, however, we see that consumer <span class="math inline">\(A\)</span> consumes at the blue dot and person <span class="math inline">\(B\)</span> at the red dot. The total amount of good <span class="math inline">\(x\)</span> that these two guys demand falls short of the amount available <span class="math inline">\(x_A+x_B\lt\bar{x}\)</span>, whereas the total amount of good <span class="math inline">\(y\)</span> that both want to consume exceeds what is available, <span class="math inline">\(y_A+y_B\gt\bar{y}\)</span>. This cannot be an equilibrium. What happens in such situations in the market? Simple: the relative price will decrease to <span class="math inline">\(p_x^\star/p_y^\star\)</span>, so as to make <span class="math inline">\(y\)</span> relatively more expensive and <span class="math inline">\(x\)</span> relatively cheaper. Then, more of <span class="math inline">\(x\)</span> will be demanded and less of <span class="math inline">\(y\)</span>, until all quantities demanded are equal to the quantities available, and all markets clear.</p>
+</div>
+<div class="g-col-6">
+<!-- Figure:........................................................... -->
+<div id="fig-prices" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-prices-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: Prices and <span class="smallcaps">Edgeworth</span> Box
+</figcaption>
+<div aria-describedby="fig-prices-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+ <iframe src="https://www.desmos.com/calculator/r6rawbymuv?embed" style="border: 1px solid #ccc; margin-right: -150px; height: 500px; margin-bottom: -0px; width: 450px;"></iframe>
+</div>
+</figure>
+</div>
+<!-- End of Figure..................................................... -->
+</div>
+</div>
+<!-- End Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Play!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Play!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Graphically, the price line will rotate around point <span class="math inline">\(E\)</span> and become flatter. This can be simulated with <a href="#fig-prices" class="quarto-xref">Figure&nbsp;5.1</a> by shifting the green dot on the right axis up, until the blue and the red consumption point of <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> coincide. The price line must pass through <span class="math inline">\(E\)</span> since no matter what the prices are, the consumer must be able to ‘buy’ his endowment at those prices. The changed price line will go through a point on the contract curve, where <span class="math inline">\(\displaystyle \mathrm{MRS}^i={p_y^\star}/{p_y^\star},\; i=A,B\)</span> indeed holds. Try to find that point.</p>
+</div>
+</div>
+<p>What we have looked at here is rather simple, but it does contain the core of what is important. In fact, a similar kind of argument also applies to the markets for production factors, and the same type of analysis goes through when consumption and production are simultaneously considered. Prices in equilibrium reflect overall scarcity and therefore a rising price for one good signals that scarcity for that particular good is increasing, relative to other goods. Such a price increase will affect the equilibrium quantity traded in that particular market, but also has spill-over effects on other markets. In equilibrium, all relative prices are such that there is no difference anymore between the quantities demanded and supplied on any market. The ‘invisible hand’ achieves decentralized coordination of individual production and consumption decisions via the price system such that <span class="smallcaps">Paretian</span> welfare is maximized.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-firstth" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="sec-firstth"><span class="header-section-number">5.2</span> The First Fundamental Theorem of Welfare Economics</h2>
+<p>To sum up, what it takes to achieve maximal welfare in the <span class="smallcaps">Pareto</span> sense is a complete set of perfectly competitive markets. To recap, the underlying assumptions are: goods are homogeneous, there is complete and symmetric information for everybody about all prices, quantities, and other parties’ strategies, there are no transactions costs and prices adjust instantaneously, and none of the market actors (consumers or producers) has any direct influence on the price (price taker behavior). We then will have that what it takes producers to transform one unit of a good into some other good (the marginal rate of transformation, or the slope of the PPF), equals the relative price of that good in terms of the other good (the rate at which goods can be sold and bought on the market). In turn, also for every consumer we have that what they are willing to give up of one good in order to obtain one extra unit of some other good (the marginal rate of substitution) equals the relative price. This is the condition for allocative efficiency <span class="math inline">\(\eqref{eq:mrtmrs}\)</span> which is, under the abovementioned assumptions, achieved automatically in market equilibrium: <span class="math display">\[\mathrm{MRT} = \frac{p_x}{p_y} = \mathrm{MRS}^A = \mathrm{MRS}^B.\]</span></p>
+<p>Without further proof we state the following:</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="First Fundamental Theorem of Welfare Economics">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+First Fundamental Theorem of Welfare Economics
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every competitive general equilibrium is <span class="smallcaps">Pareto</span> efficient.</p>
+</div>
+</div>
+<p>Hence, market competition implies efficiency. The intuition is that under the conditions of competition, every rational actor (consumer or firm) does the best they can to act in their own best interest, given the (relative) prices, and given those prices, they must adjust accordingly until their marginal rates are equal to the relative prices. But as the relative prices are the same for everybody, the marginal rates are also aligned. The latter is <span class="smallcaps">Pareto</span> efficiency as implied in market equilibrium.</p>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-secth" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="sec-secth"><span class="header-section-number">5.3</span> The Second Fundamental Theorem of Welfare Economics</h2>
+<p>The reverse also holds. The Second Theorem states:</p>
+<div class="callout callout-style-default callout-important no-icon callout-titled" title="Second Fundamental Theorem of Welfare Economics">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Second Fundamental Theorem of Welfare Economics
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Every <span class="smallcaps">Pareto</span> efficient allocation can be achieved as a competitive general equilibrium by some suitable choice of initial endowments.</p>
+</div>
+</div>
+<p>This means that efficiency is consistent with some market equilibrium.</p>
+<!-- Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<div class="grid">
+<div class="g-col-6">
+<p>For illustration, turn to <a href="#fig-2FTWE_upf" class="quarto-xref">Figure&nbsp;5.2</a>.</p>
+<p>The second theorem tells us that if the government prefers one point on the UPF, call it <span class="math inline">\(R\)</span>, while consumers have chosen point <span class="math inline">\(Q\)</span>, all the government needs to do is to change the initial endowments of resources appropriately, and the market mechanism will do the rest. Suppose the initial endowment of consumers were given by a point <span class="math inline">\(E\)</span> from which Point <span class="math inline">\(R\)</span> on the UPF could not be reached by consumers or the market alone. Then, the state could change the initial endowment to a point <span class="math inline">\(E'\)</span> from which <span class="math inline">\(R\)</span> can be reached. The implication is that equity and efficiency are separable under the second theorem<span>—</span>one can be achieved without giving up the other. We shall discuss below issues of equity, that have to do with how resources are distributed between people, and how we value that distribution.</p>
+</div>
+<div class="g-col-6">
+<!-- Figure:........................................................... -->
+<div id="fig-2FTWE_upf" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-2FTWE_upf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: Second Theorem Illustrated
+</figcaption>
+<div aria-describedby="fig-2FTWE_upf-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/2FTWE_upf.png" class="img-fluid figure-img">
+</div>
+</figure>
+</div>
+<!-- End of Figure..................................................... -->
+</div>
+</div>
+<!-- End Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<p>For the second theorem to hold, in addition to the conditions mentioned above, we need the technical assumptions that both consumer preferences and production technologies are convex (giving rise to UPFs and PPFs of the concave shapes). Note that the implementation of the change in initial endowments is a tricky business: technically, we need <em>lump-sum</em> transfers (taxes or subsidies). Lump-sum transfers involve that we can shift resources from person A to B (or reverse) without altering the agents’ behavior in response to this initial redistribution.</p>
+<div id="nte-lumpsum" class="callout callout-style-default callout-note no-icon callout-titled" title="Lump Sum Taxes and Transfers">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Remark&nbsp;5.1: Lump Sum Taxes and Transfers
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Lump-sum taxes are not based on anything else but the existence of the tax payer; they are fixed amounts to be paid by everybody irrespective of income, consumption or other choice variables. As is the case in the present context, lump-sum taxes are mainly used in theoretical models to illustrate a way to generate revenue without welfare losses. Lump-sum transfers are amounts given to citizens, not differentiated according to characteristics of the person or their circumstances.</p>
+</div>
+</div>
+<!-- SubSection........................................................ -->
+</section>
+<section id="sec-secbest" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="sec-secbest"><span class="header-section-number">5.4</span> Second Best</h2>
+<p>The ideal world of a competitive market equilibrium where welfare is maximized is sometimes dubbed <em>first best</em>. Economic policy can in many instances only achieve <em>second best</em> outcomes. What does that mean? Suppose that in one market the optimality conditions are not fulfilled but distorted, perhaps because there is asymmetric information, or because there is market power, an externality, or some other form of market failure or a tax. Also assume that the government cannot do anything to remove the problem directly. The second-best view now maintains that one should also let go of pursuing first-best allocations in all other markets: what used to be optimal without any distortions is not optimal anymore when some distortion occurs in one of the other markets. This is because in a general economic system all markets are linked with each other through relative prices. Once there is a price distortion in one market, relative prices with other markets will be affected as well, and they lose some of their ability to signal scarcity and redirect resources to their best uses.</p>
+<!-- Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<div class="grid">
+<div class="g-col-6">
+<p>The second best view implies that if we try to maximize total welfare in the face of distortions, we need to be aware of the fact that the conditions for optimality have changed. As a consequence, policy makers will not be able anymore to choose an allocation that is both efficient and equitable. There will be instead a fundamental trade-off that society has to make: typically higher equity must be ‘bought’ by foregoing efficiency.</p>
+<p>This can be illustrated with <a href="#fig-secbest" class="quarto-xref">Figure&nbsp;5.3</a>. Consider any point on the UPF. This may be a market equilibrium. A social indifference curve will go through this point on the UPF, social welfare will have a particular level, say, <span class="math inline">\(W_\mathtt{I}\)</span>. The social optimum will have welfare level, say, <span class="math inline">\(W_\mathtt{III}\)</span>. Yet, while moving away from the market equilibrium by means of redistributing incomes, we lose efficiency and we may end up in a point below the (first best) efficient frontier.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled" title="Play!">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Play!
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="#fig-secbest" class="quarto-xref">Figure&nbsp;5.3</a> is really like <a href="#fig-swf" class="quarto-xref">Figure&nbsp;4.3</a> illustrated with convex social indifference curves. Shift the orange slider to simulate a loss of efficiency, which we can imagine is a loss of economic resources. This leads to an inward movement of the entire UPF, and the first-best will be out of reach. If we accept the fact of a shrinking pie, the second-best is the best we can do. The mechanism is similar to a shrinking PPF when, say, the labor force becomes smaller or capital moves out of the country. Conditional on these things happening, agents can still find <span class="smallcaps">Pareto</span> efficient allocations within the new setting. Also see <a href="#fig-ppfedge" class="quarto-xref">Figure&nbsp;3.2</a>.</p>
+</div>
+</div>
+</div>
+<div class="g-col-6">
+<!-- Figure:........................................................... -->
+<div id="fig-secbest" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-fig" id="fig-secbest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.3: Second Best Feasible Optimum
+</figcaption>
+<div aria-describedby="fig-secbest-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+ <iframe src="https://www.desmos.com/calculator/kbk4q3pjsl?embed" style="border: 1px solid #ccc; margin-right: -150px; height: 500px; margin-bottom: -0px; width: 450px;"></iframe>
+</div>
+</figure>
+</div>
+<!-- End of Figure..................................................... -->
+</div>
+</div>
+<!-- End Two Column Setup _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ -->
+<p>The efficiency loss comes about because we cannot take welfare away from one person and increase that of another without changing their behavior. There are no lump-sum taxes. In reality, we are facing a loss in resources (deadweight loss). But a loss in available resources means that that the UPF locus in <a href="#fig-secbest" class="quarto-xref">Figure&nbsp;5.3</a> shifts inwards (second best UPF). The chosen point is therefore only <em>constrained efficient</em>. Here, social welfare is being maximized given that <em>after</em> redistribution the ‘pie’ has become smaller. The shrinking of the pie (inefficiency) is the price we pay if we not only care about the size of the pie, but also about how the pie is split (equity). It is for many people better that two parties get a tiny slice of a small pie than one guy getting all of a big pie. These are important considerations for policy makers.</p>
+<div id="nte-ineqwealth" class="callout callout-style-default callout-note no-icon callout-titled" title="Inequality of Wealth">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Remark&nbsp;5.2: Inequality of Wealth
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is easy to imagine why very unequal distributions of resources cause a stir in public debates. Consider the distribution of private wealth (net of liabilities) in the United States. It has been reported that the richest 1% of American households together own about 42% of all financial wealth in the country. That leaves the other 99% of all people to own the remaining 58% of all financial wealth. But even among the 99%, the distribution is very unequal. The top 10% owns 85% of all financial wealth, the other 90% owns not so much at all (15%).</p>
+</div>
+</div>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
